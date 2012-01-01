@@ -1,0 +1,109 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="402" fromTop="15" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="191" fromTop="6" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="971" fromTop="13" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="593" fromTop="22" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="475" fromTop="20" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="914" fromTop="34" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="15" fromTop="1" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="512" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="191" fromTop="9" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="708" fromTop="19" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="955" fromTop="24" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="651" fromTop="21" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="1712" fromTop="34" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="1323" fromTop="23" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="1671" fromTop="29" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="1671" fromTop="29" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="364" fromTop="8" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="191" fromTop="6" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="public" priority="63" />
+      <Item value="AtomPub10ServiceDocumentFormatter`0" priority="128" />
+      <Item value="HttpResponseMessage`0" priority="191" />
+      <Item value="new" priority="192" />
+      <Item value="ServiceHost" priority="28" />
+      <Item value="HttpServiceHost" priority="28" />
+      <Item value="typeof" priority="63" />
+      <Item value="tryf" priority="31" />
+      <Item value="catch" priority="31" />
+      <Item value="bool" priority="31" />
+      <Item value="host" priority="191" />
+      <Item value="Exception`0" priority="31" />
+      <Item value="if" priority="31" />
+      <Item value="ICommunicationObject`0" priority="32" />
+      <Item value="Faulted" priority="16" />
+      <Item value="else" priority="31" />
+      <Item value="Console`0" priority="31" />
+      <Item value="doc" priority="127" />
+      <Item value="request" priority="31" />
+      <Item value="resources" priority="31" />
+      <Item value="return" priority="95" />
+      <Item value="as" priority="31" />
+      <Item value="Uri" priority="28" />
+      <Item value="HttpRequestMessage`0" priority="31" />
+      <Item value="void" priority="31" />
+      <Item value="HttpResponseMessage" priority="57" />
+      <Item value="response" priority="191" />
+      <Item value="HttpStatusCode`0" priority="31" />
+      <Item value="ObjectContent" priority="28" />
+      <Item value="ServiceKnownType" priority="31" />
+      <Item value="type" priority="31" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.ApplicationServer.Http.HttpServiceHost">
+      <Item value="Open`0" priority="26" />
+      <Item value="State" priority="26" />
+      <Item value="Abort`0" priority="26" />
+      <Item value="Close`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="ReadLine`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ServiceModel.Syndication.ServiceDocument">
+      <Item value="BaseUri" priority="26" />
+      <Item value="Workspaces" priority="26" />
+      <Item value="GetFormatter`0" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Http.HttpRequestMessage">
+      <Item value="RequestUri" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.ObjectModel.Collection`1">
+      <Item value="Add`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.HttpStatusCode">
+      <Item value="OK" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Http.HttpResponseMessage">
+      <Item value="Content" priority="53" />
+      <Item value="Headers" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Http.Headers.HttpResponseHeaders">
+      <Item value="Add`0" priority="53" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

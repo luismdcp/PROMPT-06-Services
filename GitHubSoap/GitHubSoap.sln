@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubSoap.Repositories", "GitHubSoap.Repositories\GitHubSoap.Repositories.csproj", "{8428D8E6-C99C-4AD9-B352-2877E2D0B11F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{EC69998D-C03B-4251-921B-8558FE8A17EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubSoap.Repositories.Implementation", "GitHubSoap.Repositories.Implementation\GitHubSoap.Repositories.Implementation.csproj", "{11D1F410-5560-4574-8D86-34A28A4171AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{86D3E76F-EE47-45F6-9B36-52C289115884}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubSoap.Services", "GitHubSoap.Services\GitHubSoap.Services.csproj", "{26E008B7-E348-4BF2-9B2F-12E904607879}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubSoap.Services.Implementation", "GitHubSoap.Services.Implementation\GitHubSoap.Services.Implementation.csproj", "{B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{0FBFD498-CBAF-4E02-94FC-DFD636BF1579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubSoap.Domain", "GitHubSoap.Domain\GitHubSoap.Domain.csproj", "{20968ABF-3B2C-4EA2-B595-F26BE96339C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{09343F4B-5019-4887-88BF-AB984A79E1A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubSoap.IoC", "GitHubSoap.IoC\GitHubSoap.IoC.csproj", "{3D8FEF75-69E7-4516-952D-57D759CF3A97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8428D8E6-C99C-4AD9-B352-2877E2D0B11F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8428D8E6-C99C-4AD9-B352-2877E2D0B11F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8428D8E6-C99C-4AD9-B352-2877E2D0B11F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8428D8E6-C99C-4AD9-B352-2877E2D0B11F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11D1F410-5560-4574-8D86-34A28A4171AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11D1F410-5560-4574-8D86-34A28A4171AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11D1F410-5560-4574-8D86-34A28A4171AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11D1F410-5560-4574-8D86-34A28A4171AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26E008B7-E348-4BF2-9B2F-12E904607879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26E008B7-E348-4BF2-9B2F-12E904607879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26E008B7-E348-4BF2-9B2F-12E904607879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26E008B7-E348-4BF2-9B2F-12E904607879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20968ABF-3B2C-4EA2-B595-F26BE96339C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20968ABF-3B2C-4EA2-B595-F26BE96339C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20968ABF-3B2C-4EA2-B595-F26BE96339C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20968ABF-3B2C-4EA2-B595-F26BE96339C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D8FEF75-69E7-4516-952D-57D759CF3A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D8FEF75-69E7-4516-952D-57D759CF3A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D8FEF75-69E7-4516-952D-57D759CF3A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D8FEF75-69E7-4516-952D-57D759CF3A97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8428D8E6-C99C-4AD9-B352-2877E2D0B11F} = {EC69998D-C03B-4251-921B-8558FE8A17EE}
+		{11D1F410-5560-4574-8D86-34A28A4171AB} = {EC69998D-C03B-4251-921B-8558FE8A17EE}
+		{26E008B7-E348-4BF2-9B2F-12E904607879} = {86D3E76F-EE47-45F6-9B36-52C289115884}
+		{B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8} = {86D3E76F-EE47-45F6-9B36-52C289115884}
+		{20968ABF-3B2C-4EA2-B595-F26BE96339C7} = {0FBFD498-CBAF-4E02-94FC-DFD636BF1579}
+		{3D8FEF75-69E7-4516-952D-57D759CF3A97} = {09343F4B-5019-4887-88BF-AB984A79E1A3}
+	EndGlobalSection
+EndGlobal

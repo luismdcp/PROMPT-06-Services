@@ -1,0 +1,7 @@
+C:\PROMPT11\uc06\PROMPT11-06-Services\GitHubSoap\GitHubSoap.Repositories\bin\Debug\GitHubSoap.Repositories.dll
+C:\PROMPT11\uc06\PROMPT11-06-Services\GitHubSoap\GitHubSoap.Repositories\bin\Debug\GitHubSoap.Repositories.pdb
+C:\PROMPT11\uc06\PROMPT11-06-Services\GitHubSoap\GitHubSoap.Repositories\obj\Debug\ResolveAssemblyReference.cache
+C:\PROMPT11\uc06\PROMPT11-06-Services\GitHubSoap\GitHubSoap.Repositories\obj\Debug\GitHubSoap.Repositories.dll
+C:\PROMPT11\uc06\PROMPT11-06-Services\GitHubSoap\GitHubSoap.Repositories\obj\Debug\GitHubSoap.Repositories.pdb
+C:\PROMPT11\uc06\PROMPT11-06-Services\GitHubSoap\GitHubSoap.Repositories\bin\Debug\GitHubSoap.Domain.dll
+C:\PROMPT11\uc06\PROMPT11-06-Services\GitHubSoap\GitHubSoap.Repositories\bin\Debug\GitHubSoap.Domain.pdb

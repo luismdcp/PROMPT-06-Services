@@ -1,0 +1,11 @@
+C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Services.Implementation.dll
+C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Services.Implementation.pdb
+C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Domain.dll
+C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Repositories.dll
+C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Services.dll
+C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Domain.pdb
+C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Repositories.pdb
+C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Services.pdb
+C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\obj\Debug\ResolveAssemblyReference.cache
+C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\obj\Debug\RESTBlogs.Services.Implementation.dll
+C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\obj\Debug\RESTBlogs.Services.Implementation.pdb

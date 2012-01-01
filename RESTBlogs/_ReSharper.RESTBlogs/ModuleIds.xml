@@ -1,0 +1,9 @@
+<Modules>
+  <Module PersistentId="201015EB-8F60-4774-BCBE-E175C1E8DC3F" ModuleId="RESTBlogs.Domain" />
+  <Module PersistentId="A4A684C6-1CCB-4FC4-A8E1-9EB4B54901DD" ModuleId="RESTBlogs.Services" />
+  <Module PersistentId="5A84D010-0D3A-42E8-9B60-82A873B2EDCE" ModuleId="RESTBlogs.Repositories" />
+  <Module PersistentId="3DA845C5-1025-4B1F-9CA5-9D8443B79875" ModuleId="RESTBlogs.Server" />
+  <Module PersistentId="C7FA3D62-0BD0-466B-8400-10CE90725FA8" ModuleId="RestService1.Client" />
+  <Module PersistentId="4EFCD92F-AC4A-4E7C-82CA-C4C5330BA90A" ModuleId="RestService1.Entities" />
+  <Module PersistentId="1E295E73-EA14-4321-A809-232C5B1104AD" ModuleId="RestService1.Service" />
+</Modules>
