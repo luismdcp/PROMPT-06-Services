@@ -25,6 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{3F6F87
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubSoap.Server", "GitHubSoap.Server\GitHubSoap.Server.csproj", "{9A087AF3-E442-45B3-9474-A5DD09AC4265}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{A725E258-BF11-4E34-9932-97B56CF005E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubSoap.Client", "GitHubSoap.Client\GitHubSoap.Client.csproj", "{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +109,16 @@ Global
 		{9A087AF3-E442-45B3-9474-A5DD09AC4265}.Release|Mixed Platforms.Build.0 = Release|x86
 		{9A087AF3-E442-45B3-9474-A5DD09AC4265}.Release|x86.ActiveCfg = Release|x86
 		{9A087AF3-E442-45B3-9474-A5DD09AC4265}.Release|x86.Build.0 = Release|x86
+		{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99}.Debug|x86.ActiveCfg = Debug|x86
+		{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99}.Debug|x86.Build.0 = Debug|x86
+		{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99}.Release|Any CPU.ActiveCfg = Release|x86
+		{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99}.Release|Mixed Platforms.Build.0 = Release|x86
+		{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99}.Release|x86.ActiveCfg = Release|x86
+		{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,5 +131,6 @@ Global
 		{20968ABF-3B2C-4EA2-B595-F26BE96339C7} = {0FBFD498-CBAF-4E02-94FC-DFD636BF1579}
 		{3D8FEF75-69E7-4516-952D-57D759CF3A97} = {09343F4B-5019-4887-88BF-AB984A79E1A3}
 		{9A087AF3-E442-45B3-9474-A5DD09AC4265} = {3F6F8790-956D-4364-848B-7735750D3797}
+		{9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99} = {A725E258-BF11-4E34-9932-97B56CF005E9}
 	EndGlobalSection
 EndGlobal

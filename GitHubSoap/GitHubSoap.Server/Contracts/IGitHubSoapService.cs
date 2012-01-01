@@ -10,33 +10,33 @@ namespace GitHubSoap.Server.Contracts
     {
         #region Issues Operations
 
-        [OperationContract(Name = "GetAllIssues")]
-        IList<Issue> GetAll(string user, string repo, int page);
+        [OperationContract]
+        IList<Issue> GetAllIssues(string user, string repo, int page);
 
-        [OperationContract(Name = "GetIssue")]
-        Issue Get(string user, string repo, int number);
+        [OperationContract]
+        Issue GetIssue(string user, string repo, int number);
 
-        [OperationContract(Name = "EditIssue")]
-        Issue Edit(string user, string password, string repo, int id, IssueEdit editIssue);
+        [OperationContract]
+        Issue EditIssue(string user, string password, string repo, int id, IssueEdit editIssue);
 
-        [OperationContract(Name = "CreateIssue")]
-        Issue Create(string user, string password, string repo, IssueCreate createIssue);
+        [OperationContract]
+        Issue CreateIssue(string user, string password, string repo, IssueCreate createIssue);
 
         #endregion
 
         #region Repos Operations
 
-        [OperationContract(Name = "GetAllRepos")]
-        IList<Repo> GetAll(string user, int page);
+        [OperationContract]
+        IList<Repo> GetAllRepos(string user, int page);
 
-        [OperationContract(Name = "GetRepo")]
-        Repo Get(string user, string repo);
+        [OperationContract]
+        Repo GetRepo(string user, string repo);
 
-        [OperationContract(Name = "EditRepo")]
-        Repo Edit(string user, string password, string repo, RepoEdit editRepo);
+        [OperationContract]
+        Repo EditRepo(string user, string password, string repo, RepoEdit editRepo);
 
-        [OperationContract(Name = "CreateRepo")]
-        Repo Create(string user, string password, RepoCreate createRepo);
+        [OperationContract]
+        Repo CreateRepo(string user, string password, RepoCreate createRepo);
 
         #endregion
     }
