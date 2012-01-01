@@ -106,3 +106,6 @@ C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Server\bin\Debug\Async
 C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Server\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Server\obj\x86\Debug\RESTBlogs.Server.exe
 C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Server\obj\x86\Debug\RESTBlogs.Server.pdb
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Server\bin\Debug\RESTBlogs.Server.exe.config
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Server\obj\x86\Debug\RESTBlogs.Server.exe
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Server\obj\x86\Debug\RESTBlogs.Server.pdb
