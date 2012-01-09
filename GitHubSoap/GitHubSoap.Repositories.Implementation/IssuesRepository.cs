@@ -38,10 +38,11 @@ namespace GitHubSoap.Repositories.Implementation
             var client = new HttpClient();
             var uri = String.Format("https://api.github.com/repos/{0}/{1}/issues/{2}", user, repo, id);
             var request = new HttpRequestMessage<IssueEdit>(editIssue,
-                                                                        new HttpMethod("Patch"),
+                                                                        new HttpMethod("PATCH"),
                                                                         new Uri(uri),
                                                                         new List<MediaTypeFormatter> { new JsonMediaTypeFormatter() });
 
+            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             client.DefaultRequestHeaders.Authorization = CreateBasicAuthentication(user, password);
             var response = client.SendAsync(request).Result;
             var result = response.Content.ReadAsAsync<Issue>().Result;
@@ -54,10 +55,11 @@ namespace GitHubSoap.Repositories.Implementation
             var client = new HttpClient();
             var uri = String.Format("https://api.github.com/repos/{0}/{1}/issues", user, repo);
             var request = new HttpRequestMessage<IssueCreate>(createIssue,
-                                                                           new HttpMethod("Post"),
+                                                                           new HttpMethod("POST"),
                                                                            new Uri(uri),
                                                                            new List<MediaTypeFormatter> { new JsonMediaTypeFormatter() });
 
+            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             client.DefaultRequestHeaders.Authorization = CreateBasicAuthentication(user, password);
             var response = client.SendAsync(request).Result;
             var result = response.Content.ReadAsAsync<Issue>().Result;

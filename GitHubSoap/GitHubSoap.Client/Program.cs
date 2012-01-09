@@ -18,7 +18,7 @@ namespace GitHubSoap.Client
             var serviceChannel = channelFactory.CreateChannel();
 
             var newRepo = new RepoCreate();
-            newRepo.name = "Test Repository";
+            newRepo.name = "Test-Repository";
             newRepo.description = "Just a test repository";
             newRepo.has_downloads = true;
             newRepo.has_issues = true;
@@ -26,24 +26,25 @@ namespace GitHubSoap.Client
             newRepo.@private = false;
 
             var createdRepo = serviceChannel.CreateRepo(user, password, newRepo);
-            var repo = serviceChannel.GetRepo(user, "Test Repository");
+            var repo = serviceChannel.GetRepo(user, "Test-Repository");
 
             var editRepo = new RepoEdit();
             editRepo.has_wiki = true;
+            editRepo.name = "Test-Repository";
 
-            serviceChannel.EditRepo(user, password, "Test repository", editRepo);
+            serviceChannel.EditRepo(user, password, "Test-Repository", editRepo);
 
             var newIssue = new IssueCreate();
             newIssue.title = "Found a bug";
             newIssue.body = "I'm having a problem with this.";
             newIssue.assignee = "luismdcp";
 
-            var createdIssue = serviceChannel.CreateIssue(user, password, "Test Repository", newIssue);
+            var createdIssue = serviceChannel.CreateIssue(user, password, "Test-Repository", newIssue);
 
             var editIssue = new IssueEdit();
             editIssue.milestone = 1;
 
-            serviceChannel.EditIssue(user, password, "Test Repository", createdIssue.id, editIssue);
+            serviceChannel.EditIssue(user, password, "Test-Repository", createdIssue.id, editIssue);
         }
     }
 }

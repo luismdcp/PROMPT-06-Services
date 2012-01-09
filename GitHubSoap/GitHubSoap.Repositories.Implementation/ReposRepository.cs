@@ -25,7 +25,7 @@ namespace GitHubSoap.Repositories.Implementation
         public Repo Get(string user, string repo)
         {
             var client = new HttpClient();
-            var uri = String.Format("https://api.github.com/repos/{0}/{1}", user);
+            var uri = String.Format("https://api.github.com/repos/{0}/{1}", user, repo);
 
             var response = client.GetAsync(uri).Result;
             var result = response.Content.ReadAsAsync<Repo>().Result;
@@ -38,10 +38,11 @@ namespace GitHubSoap.Repositories.Implementation
             var client = new HttpClient();
             var uri = String.Format("https://api.github.com/repos/{0}/{1}", user, repo);
             var request = new HttpRequestMessage<RepoEdit>(editRepo,
-                                                                        new HttpMethod("Patch"),
+                                                                        new HttpMethod("PATCH"),
                                                                         new Uri(uri),
                                                                         new List<MediaTypeFormatter> { new JsonMediaTypeFormatter() });
 
+            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             client.DefaultRequestHeaders.Authorization = CreateBasicAuthentication(user, password);
             var response = client.SendAsync(request).Result;
             var result = response.Content.ReadAsAsync<Repo>().Result;
@@ -58,6 +59,7 @@ namespace GitHubSoap.Repositories.Implementation
                                                                            new Uri(uri),
                                                                            new List<MediaTypeFormatter> { new JsonMediaTypeFormatter() });
 
+            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             client.DefaultRequestHeaders.Authorization = CreateBasicAuthentication(user, password);
             var response = client.SendAsync(request).Result;
             var result = response.Content.ReadAsAsync<Repo>().Result;

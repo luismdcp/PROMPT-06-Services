@@ -9,7 +9,7 @@ namespace GitHubSoap.Domain.Issues
         #region Properties
 
         [DataMember]
-        public IList<Label> labels { get; set; }
+        public string state { get; set; }
 
         #endregion
     }

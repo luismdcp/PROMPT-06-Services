@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using GitHubSoap.IoC;
@@ -12,19 +13,21 @@ namespace GitHubSoap.Server
         public static void Main(string[] args)
         {
             ContainerBootstrapper.BootstrapStructureMap();
+            string serviceBaseURI = ConfigurationSettings.AppSettings["ServiceBaseURI"];
 
-            using (var host = new ServiceHost(typeof(GitHubSoapService), new Uri("http://localhost:8080")))
+            using (var host = new ServiceHost(typeof(GitHubSoapService), new Uri(serviceBaseURI)))
             {
                 host.AddServiceEndpoint(typeof(IGitHubSoapService), new BasicHttpBinding(), "GitHubSoap");
 
                 host.Description.Behaviors.Add(new ServiceMetadataBehavior()
                                                 {
                                                     HttpGetEnabled = true,
-                                                    HttpGetUrl = new Uri("http://localhost:8080/metadata")
+                                                    HttpGetUrl = new Uri(serviceBaseURI + "/GitHubSoap/metadata")
                                                 });
 
                 host.Open();
                 Console.WriteLine("Host is opened, press any key to end ...");
+                Console.ReadKey();
             }
         }
     }

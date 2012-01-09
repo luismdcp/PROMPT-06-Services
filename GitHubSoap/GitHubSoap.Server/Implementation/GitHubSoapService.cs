@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ServiceModel;
 using GitHubSoap.Domain.Issues;
 using GitHubSoap.Domain.Repos;
 using GitHubSoap.Server.Contracts;
@@ -7,6 +8,7 @@ using StructureMap;
 
 namespace GitHubSoap.Server.Implementation
 {
+    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class GitHubSoapService : IGitHubSoapService
     {
         public IList<Issue> GetAllIssues(string user, string repo, int page)
