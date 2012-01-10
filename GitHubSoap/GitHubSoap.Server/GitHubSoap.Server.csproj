@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Activation" />
     <Reference Include="System.ServiceModel.Web" />
@@ -51,8 +52,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Batching\Handlers\Contracts\IRequestHandler.cs" />
+    <Compile Include="Batching\Handlers\Implementation\CreateIssueRequestHandler.cs" />
+    <Compile Include="Batching\Handlers\Implementation\CreateRepoRequestHandler.cs" />
+    <Compile Include="Batching\Handlers\Implementation\EditIssueRequestHandler.cs" />
+    <Compile Include="Batching\Handlers\Implementation\EditRepoRequestHandler.cs" />
+    <Compile Include="Batching\Handlers\Implementation\GetAllIssuesRequestHandler.cs" />
+    <Compile Include="Batching\Handlers\Implementation\GetAllReposRequestHandler.cs" />
+    <Compile Include="Batching\Handlers\Implementation\GetIssueRequestHandler.cs" />
+    <Compile Include="Batching\Handlers\Implementation\GetRepoRequestHandler.cs" />
+    <Compile Include="Batching\Requests\CreateIssueRequest.cs" />
+    <Compile Include="Batching\Requests\CreateRepoRequest.cs" />
+    <Compile Include="Batching\Requests\EditIssueRequest.cs" />
+    <Compile Include="Batching\Requests\EditRepoRequest.cs" />
+    <Compile Include="Batching\Requests\GetAllIssuesRequest.cs" />
+    <Compile Include="Batching\Requests\GetAllReposRequest.cs" />
+    <Compile Include="Batching\Requests\GetIssueRequest.cs" />
+    <Compile Include="Batching\Requests\GetRepoRequest.cs" />
+    <Compile Include="Batching\Requests\Request.cs" />
+    <Compile Include="Batching\Responses\GetAllIssuesResponse.cs" />
+    <Compile Include="Batching\Responses\GetAllReposResponse.cs" />
+    <Compile Include="Batching\Responses\IssueResponse.cs" />
+    <Compile Include="Batching\Responses\RepoResponse.cs" />
+    <Compile Include="Batching\Responses\Response.cs" />
+    <Compile Include="Contracts\IGitHubSoapBatchingService.cs" />
     <Compile Include="Contracts\IGitHubSoapService.cs" />
+    <Compile Include="Implementation\GitHubSoapBatchingService.cs" />
     <Compile Include="Implementation\GitHubSoapService.cs" />
+    <Compile Include="Implementation\KnownTypeProvider.cs" />
     <Compile Include="Interceptors\ClientCallsControl.cs" />
     <Compile Include="Interceptors\ClientCallsInfo.cs" />
     <Compile Include="Interceptors\RequestInterceptor.cs" />
@@ -90,6 +117,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
