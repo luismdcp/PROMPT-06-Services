@@ -21,21 +21,26 @@ namespace GitHubSoap.Server.Interceptors
                 ClientCallsInfo callsInfo = null;
                 CallsData.TryGetValue(clientIPAddress, out callsInfo);
 
-                if (callsInfo != null)
-                {
-                    TimeSpan timeElapsed = DateTime.Now - callsInfo.TimeFirstCall;
-                    int callsPerHour = Convert.ToInt32(ConfigurationSettings.AppSettings["CallsPerHour"]);
+                TimeSpan timeElapsed = DateTime.Now - callsInfo.TimeFirstCall;
+                int callsPerHour = Convert.ToInt32(ConfigurationSettings.AppSettings["CallsPerHour"]);
+                int timeIntervalInMinutes = Convert.ToInt32(ConfigurationSettings.AppSettings["TimeIntervalInMinutes"]);
 
-                    lock (callsInfo)
+                lock (callsInfo)
+                {
+                    if (timeElapsed.Minutes <= timeIntervalInMinutes)
                     {
-                        if (timeElapsed.Minutes <= 60 && callsInfo.CountCalls <= callsPerHour)
+                        if (callsInfo.CountCalls >= callsPerHour)
                         {
-                            callsInfo.CountCalls++;
+                            throw new FaultException(String.Format("Calls from your IP Address '{0}' exceeded the maximum number '{1}' per time interval for '{2}'. Request Denied.", clientIPAddress, callsPerHour, timeIntervalInMinutes));
                         }
                         else
                         {
-                            throw new FaultException(String.Format("Calls from your IP Address '{0}' exceeded the maximum number '{1}' per hour. Request Denied.", clientIPAddress, callsPerHour));
+                            callsInfo.CountCalls++;
                         }
+                    }
+                    else
+                    {
+                        callsInfo.CountCalls = 1;
                     }
                 }
             }

@@ -3,8 +3,3 @@ C:\PROMPT11\uc06\PROMPT11-06-Services\GitHubSoap\GitHubSoap.Domain\bin\Debug\Git
 C:\PROMPT11\uc06\PROMPT11-06-Services\GitHubSoap\GitHubSoap.Domain\obj\Debug\ResolveAssemblyReference.cache
 C:\PROMPT11\uc06\PROMPT11-06-Services\GitHubSoap\GitHubSoap.Domain\obj\Debug\GitHubSoap.Domain.dll
 C:\PROMPT11\uc06\PROMPT11-06-Services\GitHubSoap\GitHubSoap.Domain\obj\Debug\GitHubSoap.Domain.pdb
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Domain\bin\Debug\GitHubSoap.Domain.dll
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Domain\bin\Debug\GitHubSoap.Domain.pdb
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Domain\obj\Debug\ResolveAssemblyReference.cache
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Domain\obj\Debug\GitHubSoap.Domain.dll
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Domain\obj\Debug\GitHubSoap.Domain.pdb

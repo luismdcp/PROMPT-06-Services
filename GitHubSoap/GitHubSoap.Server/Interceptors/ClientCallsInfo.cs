@@ -9,7 +9,7 @@ namespace GitHubSoap.Server.Interceptors
 
         public ClientCallsInfo()
         {
-            this.CountCalls = 0;
+            this.CountCalls = 1;
             this.TimeFirstCall = DateTime.Now;
         }
     }
