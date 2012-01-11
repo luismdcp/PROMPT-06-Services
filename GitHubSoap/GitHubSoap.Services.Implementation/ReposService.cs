@@ -3,7 +3,7 @@ using GitHubSoap.Domain.Repos;
 using GitHubSoap.Repositories.Contracts;
 using GitHubSoap.Services.Contracts;
 
-namespace GitHubSoap.Services.Implementation
+namespace GitHubSoap.Services.Persistence
 {
     public class ReposService : IReposService
     {

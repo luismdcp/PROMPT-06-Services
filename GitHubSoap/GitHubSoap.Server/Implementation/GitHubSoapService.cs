@@ -8,7 +8,7 @@ using StructureMap;
 
 namespace GitHubSoap.Server.Implementation
 {
-    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]
+    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, IncludeExceptionDetailInFaults = true)]
     public class GitHubSoapService : IGitHubSoapService
     {
         public IList<Issue> GetAllIssues(string user, string repo, int page)

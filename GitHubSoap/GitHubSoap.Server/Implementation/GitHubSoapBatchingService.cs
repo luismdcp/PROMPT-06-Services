@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ServiceModel;
 using GitHubSoap.Server.Batching.Handlers.Contracts;
 using GitHubSoap.Server.Batching.Handlers.Implementation;
 using GitHubSoap.Server.Batching.Requests;
@@ -8,6 +9,7 @@ using GitHubSoap.Server.Contracts;
 
 namespace GitHubSoap.Server.Implementation
 {
+    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, IncludeExceptionDetailInFaults = true)]
     public class GitHubSoapBatchingService : IGitHubSoapBatchingService
     {
         private static readonly Dictionary<Type, IRequestHandler> requestTypesToRequestHandlerTypes;

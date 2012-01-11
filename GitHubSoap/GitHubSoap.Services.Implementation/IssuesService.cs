@@ -4,7 +4,7 @@ using GitHubSoap.Domain.Issues;
 using GitHubSoap.Repositories.Contracts;
 using GitHubSoap.Services.Contracts;
 
-namespace GitHubSoap.Services.Implementation
+namespace GitHubSoap.Services.Persistence
 {
     public class IssuesService : IIssuesService
     {

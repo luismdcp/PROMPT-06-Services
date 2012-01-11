@@ -50,17 +50,29 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GitHubSoap.Repositories.Implementation\GitHubSoap.Repositories.Implementation.csproj">
+    <ProjectReference Include="..\GitHubSoap.Repositories.Implementation\GitHubSoap.Repositories.REST.csproj">
       <Project>{11D1F410-5560-4574-8D86-34A28A4171AB}</Project>
-      <Name>GitHubSoap.Repositories.Implementation</Name>
+      <Name>GitHubSoap.Repositories.REST</Name>
     </ProjectReference>
     <ProjectReference Include="..\GitHubSoap.Repositories\GitHubSoap.Repositories.csproj">
       <Project>{8428D8E6-C99C-4AD9-B352-2877E2D0B11F}</Project>
       <Name>GitHubSoap.Repositories</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GitHubSoap.Services.Implementation\GitHubSoap.Services.Implementation.csproj">
+    <ProjectReference Include="..\GitHubSoap.Security.Authentication.InMemory\GitHubSoap.Security.Authentication.InMemory.csproj">
+      <Project>{64870667-16E6-4264-AD79-454ECF42ED26}</Project>
+      <Name>GitHubSoap.Security.Authentication.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GitHubSoap.Security.Authorization.InMemory\GitHubSoap.Security.Authorization.InMemory.csproj">
+      <Project>{F774362F-CA26-4688-96B5-9C306732CA31}</Project>
+      <Name>GitHubSoap.Security.Authorization.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GitHubSoap.Security\GitHubSoap.Security.csproj">
+      <Project>{669B1A02-19BC-480B-B599-EA8ABC2A33A2}</Project>
+      <Name>GitHubSoap.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GitHubSoap.Services.Implementation\GitHubSoap.Services.Persistence.csproj">
       <Project>{B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8}</Project>
-      <Name>GitHubSoap.Services.Implementation</Name>
+      <Name>GitHubSoap.Services.Persistence</Name>
     </ProjectReference>
     <ProjectReference Include="..\GitHubSoap.Services\GitHubSoap.Services.csproj">
       <Project>{26E008B7-E348-4BF2-9B2F-12E904607879}</Project>

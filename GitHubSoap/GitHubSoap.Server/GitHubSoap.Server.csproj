@@ -35,12 +35,48 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityDataModel">
+      <HintPath>..\packages\WebApi.OData.0.6.0\lib\40-Full\EntityDataModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Http">
+      <HintPath>..\packages\WebApi.0.6.0\lib\40-Full\Microsoft.ApplicationServer.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.HttpEnhancements">
+      <HintPath>..\packages\WebApi.Enhancements.0.6.0\lib\40-Full\Microsoft.ApplicationServer.HttpEnhancements.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Spatial">
+      <HintPath>..\packages\WebApi.OData.0.6.0\lib\40-Full\Microsoft.Data.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Json, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\JsonValue.0.6.0\lib\40\Microsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Formatting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\HttpClient.0.6.0\lib\40\Microsoft.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Formatting.OData">
+      <HintPath>..\packages\WebApi.OData.0.6.0\lib\40-Full\Microsoft.Net.Http.Formatting.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Runtime.Serialization.Internal">
+      <HintPath>..\packages\WebApi.0.6.0\lib\40-Full\Microsoft.Runtime.Serialization.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Server.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebApi.0.6.0\lib\40-Full\Microsoft.Server.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ServiceModel.Internal">
+      <HintPath>..\packages\WebApi.0.6.0\lib\40-Full\Microsoft.ServiceModel.Internal.dll</HintPath>
+    </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OData">
+      <HintPath>..\packages\WebApi.OData.0.6.0\lib\40-Full\System.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\HttpClient.0.6.0\lib\40\System.Net.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Activation" />
@@ -80,10 +116,12 @@
     <Compile Include="Implementation\GitHubSoapBatchingService.cs" />
     <Compile Include="Implementation\GitHubSoapService.cs" />
     <Compile Include="Implementation\KnownTypeProvider.cs" />
-    <Compile Include="Interceptors\ClientCallsControl.cs" />
-    <Compile Include="Interceptors\ClientCallsInfo.cs" />
-    <Compile Include="Interceptors\RequestInterceptor.cs" />
-    <Compile Include="Interceptors\RequestsInterceptionBehavior.cs" />
+    <Compile Include="Inspectors\Authentication\AuthenticationHeaderInspector.cs" />
+    <Compile Include="Inspectors\Authentication\AuthenticationHeaderBehavior.cs" />
+    <Compile Include="Inspectors\CallsRateControl\ClientCallsRateControl.cs" />
+    <Compile Include="Inspectors\CallsRateControl\ClientCallsInfo.cs" />
+    <Compile Include="Inspectors\CallsRateControl\RequestCallRateInspector.cs" />
+    <Compile Include="Inspectors\CallsRateControl\RequestCallRateBehavior.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,17 +134,29 @@
       <Project>{3D8FEF75-69E7-4516-952D-57D759CF3A97}</Project>
       <Name>GitHubSoap.IoC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GitHubSoap.Repositories.Implementation\GitHubSoap.Repositories.Implementation.csproj">
+    <ProjectReference Include="..\GitHubSoap.Repositories.Implementation\GitHubSoap.Repositories.REST.csproj">
       <Project>{11D1F410-5560-4574-8D86-34A28A4171AB}</Project>
-      <Name>GitHubSoap.Repositories.Implementation</Name>
+      <Name>GitHubSoap.Repositories.REST</Name>
     </ProjectReference>
     <ProjectReference Include="..\GitHubSoap.Repositories\GitHubSoap.Repositories.csproj">
       <Project>{8428D8E6-C99C-4AD9-B352-2877E2D0B11F}</Project>
       <Name>GitHubSoap.Repositories</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GitHubSoap.Services.Implementation\GitHubSoap.Services.Implementation.csproj">
+    <ProjectReference Include="..\GitHubSoap.Security.Authentication.InMemory\GitHubSoap.Security.Authentication.InMemory.csproj">
+      <Project>{64870667-16E6-4264-AD79-454ECF42ED26}</Project>
+      <Name>GitHubSoap.Security.Authentication.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GitHubSoap.Security.Authorization.InMemory\GitHubSoap.Security.Authorization.InMemory.csproj">
+      <Project>{F774362F-CA26-4688-96B5-9C306732CA31}</Project>
+      <Name>GitHubSoap.Security.Authorization.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GitHubSoap.Security\GitHubSoap.Security.csproj">
+      <Project>{669B1A02-19BC-480B-B599-EA8ABC2A33A2}</Project>
+      <Name>GitHubSoap.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GitHubSoap.Services.Implementation\GitHubSoap.Services.Persistence.csproj">
       <Project>{B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8}</Project>
-      <Name>GitHubSoap.Services.Implementation</Name>
+      <Name>GitHubSoap.Services.Persistence</Name>
     </ProjectReference>
     <ProjectReference Include="..\GitHubSoap.Services\GitHubSoap.Services.csproj">
       <Project>{26E008B7-E348-4BF2-9B2F-12E904607879}</Project>
@@ -117,7 +167,9 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Inspectors\Authorization\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

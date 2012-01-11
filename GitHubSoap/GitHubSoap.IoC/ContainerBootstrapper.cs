@@ -1,7 +1,10 @@
 ﻿using GitHubSoap.Repositories.Contracts;
-using GitHubSoap.Repositories.Implementation;
+using GitHubSoap.Repositories.REST;
+using GitHubSoap.Security.Authentication.InMemory;
+using GitHubSoap.Security.Authorization.InMemory;
+using GitHubSoap.Security.Contracts;
 using GitHubSoap.Services.Contracts;
-using GitHubSoap.Services.Implementation;
+using GitHubSoap.Services.Persistence;
 using StructureMap;
 
 namespace GitHubSoap.IoC
@@ -16,6 +19,8 @@ namespace GitHubSoap.IoC
                 x.ForRequestedType<IReposRepository>().TheDefaultIsConcreteType<ReposRepository>();
                 x.ForRequestedType<IIssuesService>().TheDefaultIsConcreteType<IssuesService>();
                 x.ForRequestedType<IReposService>().TheDefaultIsConcreteType<ReposService>();
+                x.ForRequestedType<IAuthenticationService>().TheDefaultIsConcreteType<AuthenticationService>();
+                x.ForRequestedType<IAuthorizationService>().TheDefaultIsConcreteType<AuthorizationService>();
             });
         }
     }

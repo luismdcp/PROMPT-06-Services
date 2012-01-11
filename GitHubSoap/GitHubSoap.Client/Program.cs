@@ -1,5 +1,6 @@
 ﻿using System.Configuration;
 using System.ServiceModel;
+using GitHubSoap.Client.Inspectors;
 using GitHubSoap.Domain.Issues;
 using GitHubSoap.Domain.Repos;
 using GitHubSoap.Server.Contracts;
@@ -19,6 +20,7 @@ namespace GitHubSoap.Client
             var endpoint = new EndpointAddress(serviceEndpointAddress);
             var binding = new BasicHttpBinding();
             ChannelFactory<IGitHubSoapService> channelFactory = new ChannelFactory<IGitHubSoapService>(binding, endpoint);
+            channelFactory.Endpoint.Behaviors.Add(new AuthenticationHeaderBehavior());
             var serviceChannel = channelFactory.CreateChannel();
 
             // Create a new repository.
