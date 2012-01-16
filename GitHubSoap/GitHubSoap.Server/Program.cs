@@ -7,6 +7,7 @@ using GitHubSoap.Server.Contracts;
 using GitHubSoap.Server.Implementation;
 using GitHubSoap.Server.Inspectors.Authentication;
 using GitHubSoap.Server.Inspectors.CallsRateControl;
+using GitHubSoap.Server.Inspectors.Authorization;
 
 namespace GitHubSoap.Server
 {
@@ -31,18 +32,19 @@ namespace GitHubSoap.Server
                                                     HttpGetUrl = new Uri(serviceBaseURI + "/GitHubSoap/metadata")
                                                 });
 
+                host.Authorization.ServiceAuthorizationManager = new CustomAuthorizationManager();
                 host.Open();
                 Console.WriteLine("Regular Host is opened, press any key to end ...");
 
                 // Build and start the Batching Service.
                 using (var batchingHost = new ServiceHost(typeof(GitHubSoapBatchingService), new Uri(batchingServiceBaseURI)))
                 {
-                    batchingHost.AddServiceEndpoint(typeof(IGitHubSoapBatchingService), new BasicHttpBinding(), "GitHubSoap");
+                    batchingHost.AddServiceEndpoint(typeof(IGitHubSoapBatchingService), new BasicHttpBinding(), "GitHubSoapBatching");
 
                     batchingHost.Description.Behaviors.Add(new ServiceMetadataBehavior()
                                                             {
                                                                 HttpGetEnabled = true,
-                                                                HttpGetUrl = new Uri(batchingServiceBaseURI + "/GitHubSoap/metadata")
+                                                                HttpGetUrl = new Uri(batchingServiceBaseURI + "/GitHubSoapBatching/metadata")
                                                             });
 
                     batchingHost.Open();

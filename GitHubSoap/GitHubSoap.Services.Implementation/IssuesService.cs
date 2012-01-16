@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GitHubSoap.Domain.Issues;
 using GitHubSoap.Repositories.Contracts;
 using GitHubSoap.Services.Contracts;

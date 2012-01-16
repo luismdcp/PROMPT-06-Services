@@ -44,9 +44,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GitHubSoap.Security\GitHubSoap.Security.csproj">
-      <Project>{669B1A02-19BC-480B-B599-EA8ABC2A33A2}</Project>
-      <Name>GitHubSoap.Security</Name>
+    <ProjectReference Include="..\GitHubSoap.Security.Contracts\GitHubSoap.Security.Contracts.csproj">
+      <Project>{9EED1FB7-78F6-4693-8555-A105BFA97DEE}</Project>
+      <Name>GitHubSoap.Security.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

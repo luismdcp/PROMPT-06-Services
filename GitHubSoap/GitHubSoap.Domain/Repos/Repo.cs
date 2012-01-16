@@ -28,6 +28,8 @@ namespace GitHubSoap.Domain.Repos
 
         [DataMember]
         public int forks { get; set; }
+
+        [DataMember]
         public string homepage { get; set; }
 
         [DataMember]

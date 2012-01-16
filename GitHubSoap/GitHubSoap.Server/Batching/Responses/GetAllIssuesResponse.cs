@@ -7,6 +7,7 @@ namespace GitHubSoap.Server.Batching.Responses
     [DataContract]
     public class GetAllIssuesResponse : Response
     {
+        [DataMember]
         public IList<Issue> IssuesList { get; set; }
 
         public GetAllIssuesResponse(IList<Issue> issuesList)

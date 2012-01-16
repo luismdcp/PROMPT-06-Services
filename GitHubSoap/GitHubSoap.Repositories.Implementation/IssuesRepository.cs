@@ -67,14 +67,10 @@ namespace GitHubSoap.Repositories.REST
             return result;
         }
 
-        #region Helper methods
-
         private static AuthenticationHeaderValue CreateBasicAuthentication(string userName, string password)
         {
             var byteArray = Encoding.ASCII.GetBytes(userName + ":" + password);
             return new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
         }
-
-        #endregion
     }
 }

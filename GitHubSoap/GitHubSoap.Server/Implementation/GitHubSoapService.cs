@@ -5,6 +5,7 @@ using GitHubSoap.Domain.Repos;
 using GitHubSoap.Server.Contracts;
 using GitHubSoap.Services.Contracts;
 using StructureMap;
+using GitHubSoap.Server.Inspectors.Authorization;
 
 namespace GitHubSoap.Server.Implementation
 {
