@@ -103,8 +103,8 @@ namespace RESTBlogs.Server.Service
                             item.Links.Add(SyndicationLink.CreateSelfLink(new Uri(String.Format("{0}/{1}", this.serviceURI, blog.Id))));
                             item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
 
-                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}", this.serviceURI, blog.Id)), "edit", "Edit Blog", "application/atom+xml;type=feed", 0));
-                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}/posts", this.serviceURI, blog.Id)), "posts", "Blog posts", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}", this.serviceURI, blog.Id)), "service.edit", "Edit Blog", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}/posts", this.serviceURI, blog.Id)), "service.posts", "Blog posts", "application/atom+xml;type=feed", 0));
 
                             var pagingLinks = this.BuildPagingLinks(blogsService.Count(), pageIndex, pageSize, request.RequestUri);
 
@@ -201,64 +201,73 @@ namespace RESTBlogs.Server.Service
         public HttpResponseMessage GetBlog(string id, HttpRequestMessage request)
         {
             HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
-
+            
             try
             {
                 IBlogsService blogsService = ObjectFactory.GetInstance<IBlogsService>();
                 var blog = blogsService.Get(String.Format("blogs/{0}", id));
 
-                if (blog != null)
+                var etag = request.Headers.IfNoneMatch.FirstOrDefault();
+
+                if (etag != null && etag.Tag == blog.etag)
                 {
-                    if (this.ClientAcceptsMediaType("text/html", request))
-                    {
-                        response.Content = new ObjectContent<string>(blog.ToHtml(), "text/html");
-                    }
-                    else
-                    {
-                        SyndicationFeed blogFeed = new SyndicationFeed();
-                        blogFeed.Title = new TextSyndicationContent("Single Blog");
-                        blogFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
-                        blogFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
-
-                        SyndicationItem item = new SyndicationItem();
-                        List<SyndicationItem> itemList = new List<SyndicationItem>();
-                        itemList.Add(item);
-                        blogFeed.Items = itemList;
-
-                        item.Id = blog.Id;
-                        item.LastUpdatedTime = blog.updated;
-                        item.PublishDate = blog.published;
-                        item.Title = new TextSyndicationContent(blog.name);
-                        item.Summary = new TextSyndicationContent(blog.description);
-
-                        item.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
-                        item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
-
-                        item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}", this.serviceURI, blog.Id)), "edit", "Edit blog", "application/atom+xml;type=feed", 0));
-                        item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}/posts", this.serviceURI, blog.Id)), "posts", "Blog posts", "application/atom+xml;type=feed", 0));
-
-                        item.Authors.Add(new SyndicationPerson(string.Empty, blog.author, string.Empty));
-
-                        SyndicationFeedFormatter formatter = null;
-
-                        if (this.ClientAcceptsMediaType("application/atom+xml", request))
-                        {
-                            formatter = blogFeed.GetAtom10Formatter();
-                        }
-                        else
-                        {
-                            if (this.ClientAcceptsMediaType("application/rss+xml", request))
-                            {
-                                formatter = blogFeed.GetRss20Formatter();
-                            }
-                        }
-
-                        response.Content = new ObjectContent(typeof(SyndicationFeedFormatter), formatter);
-                    }
+                    response.StatusCode = HttpStatusCode.NotModified;
                 }
                 else
                 {
-                    response.StatusCode = HttpStatusCode.NotFound;
+                    if (blog != null)
+                    {
+                        if (this.ClientAcceptsMediaType("text/html", request))
+                        {
+                            response.Content = new ObjectContent<string>(blog.ToHtml(), "text/html");
+                        }
+                        else
+                        {
+                            SyndicationFeed blogFeed = new SyndicationFeed();
+                            blogFeed.Title = new TextSyndicationContent("Single Blog");
+                            blogFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
+                            blogFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
+
+                            SyndicationItem item = new SyndicationItem();
+                            List<SyndicationItem> itemList = new List<SyndicationItem>();
+                            itemList.Add(item);
+                            blogFeed.Items = itemList;
+
+                            item.Id = blog.Id;
+                            item.LastUpdatedTime = blog.updated;
+                            item.PublishDate = blog.published;
+                            item.Title = new TextSyndicationContent(blog.name);
+                            item.Summary = new TextSyndicationContent(blog.description);
+
+                            item.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
+                            item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
+
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}", this.serviceURI, blog.Id)), "edit", "Edit blog", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}/posts", this.serviceURI, blog.Id)), "posts", "Blog posts", "application/atom+xml;type=feed", 0));
+
+                            item.Authors.Add(new SyndicationPerson(string.Empty, blog.author, string.Empty));
+
+                            SyndicationFeedFormatter formatter = null;
+
+                            if (this.ClientAcceptsMediaType("application/atom+xml", request))
+                            {
+                                formatter = blogFeed.GetAtom10Formatter();
+                            }
+                            else
+                            {
+                                if (this.ClientAcceptsMediaType("application/rss+xml", request))
+                                {
+                                    formatter = blogFeed.GetRss20Formatter();
+                                }
+                            }
+
+                            response.Content = new ObjectContent(typeof(SyndicationFeedFormatter), formatter);
+                        }
+                    }
+                    else
+                    {
+                        response.StatusCode = HttpStatusCode.NotFound;
+                    }
                 }
             }
             catch (Exception ex)
@@ -410,7 +419,7 @@ namespace RESTBlogs.Server.Service
 
         #endregion
 
-        #region Post operations
+        #region Posts operations
 
         [WebGet(UriTemplate = "/blogs/{id}/posts")]
         public HttpResponseMessage GetPosts(string id, HttpRequestMessage request, int pageIndex = 1, int pageSize = 10)
@@ -451,9 +460,9 @@ namespace RESTBlogs.Server.Service
                             item.Links.Add(SyndicationLink.CreateSelfLink(new Uri(String.Format("{0}/{1}/{2}", this.serviceURI, post.blogId, post.Id))));
                             item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
 
-                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}", this.serviceURI, post.blogId)), "blog", "Parent blog", "application/atom+xml;type=feed", 0));
-                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}/{2}", this.serviceURI, post.blogId, post.Id)), "edit", "Edit post", "application/atom+xml;type=feed", 0));
-                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}/{2}/{3}", this.serviceURI, post.blogId, post.Id, "comments")), "comments", "Post comments", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}", this.serviceURI, post.blogId)), "service.blog", "Parent blog", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}/{2}", this.serviceURI, post.blogId, post.Id)), "service.edit", "Edit post", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/{1}/{2}/{3}", this.serviceURI, post.blogId, post.Id, "service.comments")), "comments", "Post comments", "application/atom+xml;type=feed", 0));
 
                             var pagingLinks = this.BuildPagingLinks(postsService.Count(), pageIndex, pageSize, request.RequestUri);
 
@@ -558,59 +567,68 @@ namespace RESTBlogs.Server.Service
                 IPostsService postsService = ObjectFactory.GetInstance<IPostsService>();
                 var post = postsService.Get(String.Format("posts/{0}", id));
 
-                if (post != null)
+                var etag = request.Headers.IfNoneMatch.FirstOrDefault();
+
+                if (etag != null && etag.Tag == post.etag)
                 {
-                    if (this.ClientAcceptsMediaType("text/html", request))
-                    {
-                        response.Content = new ObjectContent<string>(post.ToHtml(), "text/html");
-                    }
-                    else
-                    {
-                        SyndicationFeed postFeed = new SyndicationFeed();
-                        postFeed.Title = new TextSyndicationContent("Single Post");
-                        postFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
-                        postFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
-
-                        SyndicationItem item = new SyndicationItem();
-                        List<SyndicationItem> itemList = new List<SyndicationItem>();
-                        itemList.Add(item);
-                        postFeed.Items = itemList;
-
-                        item.Id = post.Id;
-                        item.LastUpdatedTime = post.updated;
-                        item.PublishDate = post.published;
-                        item.Title = new TextSyndicationContent(post.title);
-                        item.Content = new TextSyndicationContent(post.content);
-
-                        item.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
-                        item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
-
-                        item.Links.Add(new SyndicationLink(request.RequestUri, "edit", "Edit Post", "application/atom+xml;type=feed", 0));
-                        item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}/{2}/{3}", this.serviceURI, blogId, post.Id, "comments")), "comments", "Post comments", "application/atom+xml;type=feed", 0));
-                        item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}", this.serviceURI, blogId)), "blog", "Parent blog", "application/atom+xml;type=feed", 0));
-
-                        item.Authors.Add(new SyndicationPerson(string.Empty, post.author, string.Empty));
-
-                        SyndicationFeedFormatter formatter = null;
-
-                        if (this.ClientAcceptsMediaType("application/atom+xml", request))
-                        {
-                            formatter = postFeed.GetAtom10Formatter();
-                        }
-                        else
-                        {
-                            if (this.ClientAcceptsMediaType("application/rss+xml", request))
-                            {
-                                formatter = postFeed.GetRss20Formatter();
-                            }
-                        }
-
-                        response.Content = new ObjectContent(typeof(SyndicationFeedFormatter), formatter);                    
-                    }
+                    response.StatusCode = HttpStatusCode.NotModified;
                 }
                 else
                 {
-                    response.StatusCode = HttpStatusCode.NotFound;
+                    if (post != null)
+                    {
+                        if (this.ClientAcceptsMediaType("text/html", request))
+                        {
+                            response.Content = new ObjectContent<string>(post.ToHtml(), "text/html");
+                        }
+                        else
+                        {
+                            SyndicationFeed postFeed = new SyndicationFeed();
+                            postFeed.Title = new TextSyndicationContent("Single Post");
+                            postFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
+                            postFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
+
+                            SyndicationItem item = new SyndicationItem();
+                            List<SyndicationItem> itemList = new List<SyndicationItem>();
+                            itemList.Add(item);
+                            postFeed.Items = itemList;
+
+                            item.Id = post.Id;
+                            item.LastUpdatedTime = post.updated;
+                            item.PublishDate = post.published;
+                            item.Title = new TextSyndicationContent(post.title);
+                            item.Content = new TextSyndicationContent(post.content);
+
+                            item.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
+                            item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
+
+                            item.Links.Add(new SyndicationLink(request.RequestUri, "service.edit", "Edit Post", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}/{2}/{3}", this.serviceURI, blogId, post.Id, "service.comments")), "comments", "Post comments", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}", this.serviceURI, blogId)), "service.blog", "Parent blog", "application/atom+xml;type=feed", 0));
+
+                            item.Authors.Add(new SyndicationPerson(string.Empty, post.author, string.Empty));
+
+                            SyndicationFeedFormatter formatter = null;
+
+                            if (this.ClientAcceptsMediaType("application/atom+xml", request))
+                            {
+                                formatter = postFeed.GetAtom10Formatter();
+                            }
+                            else
+                            {
+                                if (this.ClientAcceptsMediaType("application/rss+xml", request))
+                                {
+                                    formatter = postFeed.GetRss20Formatter();
+                                }
+                            }
+
+                            response.Content = new ObjectContent(typeof(SyndicationFeedFormatter), formatter);
+                        }
+                    }
+                    else
+                    {
+                        response.StatusCode = HttpStatusCode.NotFound;
+                    }
                 }
             }
             catch (Exception)
@@ -743,8 +761,8 @@ namespace RESTBlogs.Server.Service
                             item.Links.Add(SyndicationLink.CreateSelfLink(new Uri(String.Format("{0}/blogs/{1}/posts/{2}/{3}", this.serviceURI, blogId, postId, comment.Id))));
                             item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
 
-                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}/posts/{2}", this.serviceURI, blogId, postId)), "post", "Parent post", "application/atom+xml;type=feed", 0));
-                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}/posts/{2}/{3}", this.serviceURI, blogId, postId, comment.Id)), "edit", "Edit comment", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}/posts/{2}", this.serviceURI, blogId, postId)), "service.post", "Parent post", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}/posts/{2}/{3}", this.serviceURI, blogId, postId, comment.Id)), "service.edit", "Edit comment", "application/atom+xml;type=feed", 0));
 
                             var pagingLinks = this.BuildPagingLinks(commentsService.Count(), pageIndex, pageSize, request.RequestUri);
 
@@ -849,60 +867,68 @@ namespace RESTBlogs.Server.Service
                 ICommentsService commentsService = ObjectFactory.GetInstance<ICommentsService>();
                 var comment = commentsService.Get(String.Format("comments/{0}", id));
 
-                if (comment != null)
+                var etag = request.Headers.IfNoneMatch.FirstOrDefault();
+
+                if (etag != null && etag.Tag == comment.etag)
                 {
-                    if (this.ClientAcceptsMediaType("text/html", request))
-                    {
-                        response.Content = new ObjectContent<string>(comment.ToHtml(), "text/html");
-                    }
-                    else
-                    {
-                        SyndicationFeed commentFeed = new SyndicationFeed();
-                        commentFeed.Title = new TextSyndicationContent("Single Comment");
-                        commentFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
-                        commentFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
-
-                        SyndicationItem item = new SyndicationItem();
-                        List<SyndicationItem> itemList = new List<SyndicationItem>();
-                        itemList.Add(item);
-                        commentFeed.Items = itemList;
-
-                        item.Id = comment.Id;
-                        item.LastUpdatedTime = comment.updated;
-                        item.PublishDate = comment.published;
-                        item.Content = new TextSyndicationContent(comment.content);
-
-                        item.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
-                        item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
-
-                        item.Links.Add(new SyndicationLink(request.RequestUri, "edit", "Edit Comment", "application/atom+xml;type=feed", 0));
-                        item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}/posts/{2}/{3}", this.serviceURI, blogId, postId, comment.Id)), "comments", "Post comments", "application/atom+xml;type=feed", 0));
-                        item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}/posts/{2}", this.serviceURI, blogId, postId)), "post", "Parent post", "application/atom+xml;type=feed", 0));
-
-                        item.Authors.Add(new SyndicationPerson(string.Empty, comment.author, string.Empty));
-
-                        SyndicationFeedFormatter formatter = null;
-
-                        if (this.ClientAcceptsMediaType("application/atom+xml", request))
-                        {
-                            formatter = commentFeed.GetAtom10Formatter();
-                        }
-                        else
-                        {
-                            if (this.ClientAcceptsMediaType("application/rss+xml", request))
-                            {
-                                formatter = commentFeed.GetRss20Formatter();
-                            }
-                        }
-
-                        response.Content = new ObjectContent(typeof(SyndicationFeedFormatter), formatter);
-                    }  
+                    response.StatusCode = HttpStatusCode.NotModified;
                 }
                 else
                 {
-                    response.StatusCode = HttpStatusCode.NotFound;
-                }
+                    if (comment != null)
+                    {
+                        if (this.ClientAcceptsMediaType("text/html", request))
+                        {
+                            response.Content = new ObjectContent<string>(comment.ToHtml(), "text/html");
+                        }
+                        else
+                        {
+                            SyndicationFeed commentFeed = new SyndicationFeed();
+                            commentFeed.Title = new TextSyndicationContent("Single Comment");
+                            commentFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
+                            commentFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
 
+                            SyndicationItem item = new SyndicationItem();
+                            List<SyndicationItem> itemList = new List<SyndicationItem>();
+                            itemList.Add(item);
+                            commentFeed.Items = itemList;
+
+                            item.Id = comment.Id;
+                            item.LastUpdatedTime = comment.updated;
+                            item.PublishDate = comment.published;
+                            item.Content = new TextSyndicationContent(comment.content);
+
+                            item.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
+                            item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
+
+                            item.Links.Add(new SyndicationLink(request.RequestUri, "service.edit", "Edit Comment", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}/posts/{2}/{3}", this.serviceURI, blogId, postId, comment.Id)), "service.comments", "Post comments", "application/atom+xml;type=feed", 0));
+                            item.Links.Add(new SyndicationLink(new Uri(String.Format("{0}/blogs/{1}/posts/{2}", this.serviceURI, blogId, postId)), "service.post", "Parent post", "application/atom+xml;type=feed", 0));
+
+                            item.Authors.Add(new SyndicationPerson(string.Empty, comment.author, string.Empty));
+
+                            SyndicationFeedFormatter formatter = null;
+
+                            if (this.ClientAcceptsMediaType("application/atom+xml", request))
+                            {
+                                formatter = commentFeed.GetAtom10Formatter();
+                            }
+                            else
+                            {
+                                if (this.ClientAcceptsMediaType("application/rss+xml", request))
+                                {
+                                    formatter = commentFeed.GetRss20Formatter();
+                                }
+                            }
+
+                            response.Content = new ObjectContent(typeof(SyndicationFeedFormatter), formatter);
+                        }
+                    }
+                    else
+                    {
+                        response.StatusCode = HttpStatusCode.NotFound;
+                    }
+                }
             }
             catch (Exception ex)
             {

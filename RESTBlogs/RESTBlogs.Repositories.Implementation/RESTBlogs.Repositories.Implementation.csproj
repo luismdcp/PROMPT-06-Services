@@ -73,9 +73,9 @@
       <Project>{201015EB-8F60-4774-BCBE-E175C1E8DC3F}</Project>
       <Name>RESTBlogs.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RESTBlogs.Repositories\RESTBlogs.Repositories.csproj">
-      <Project>{5A84D010-0D3A-42E8-9B60-82A873B2EDCE}</Project>
-      <Name>RESTBlogs.Repositories</Name>
+    <ProjectReference Include="..\RESTBlogs.Repositories.Contracts\RESTBlogs.Repositories.Contracts.csproj">
+      <Project>{15028C99-8264-49D5-BECC-64ED68240914}</Project>
+      <Name>RESTBlogs.Repositories.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

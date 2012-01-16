@@ -11,6 +11,7 @@ namespace RESTBlogs.Domain
         public DateTimeOffset updated { get; set; }
         public string author { get; set; }
         public string postId { get; set; }
+        public string etag { get; set; }
 
         public string ToHtml()
         {

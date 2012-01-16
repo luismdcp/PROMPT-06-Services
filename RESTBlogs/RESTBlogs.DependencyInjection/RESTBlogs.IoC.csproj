@@ -50,21 +50,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RESTBlogs.Repositories.Contracts\RESTBlogs.Repositories.Contracts.csproj">
+      <Project>{15028C99-8264-49D5-BECC-64ED68240914}</Project>
+      <Name>RESTBlogs.Repositories.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RESTBlogs.Repositories.Implementation\RESTBlogs.Repositories.Implementation.csproj">
       <Project>{9DFC4A7D-2255-4737-82E6-F82BD70709E6}</Project>
       <Name>RESTBlogs.Repositories.Implementation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RESTBlogs.Repositories\RESTBlogs.Repositories.csproj">
-      <Project>{5A84D010-0D3A-42E8-9B60-82A873B2EDCE}</Project>
-      <Name>RESTBlogs.Repositories</Name>
+    <ProjectReference Include="..\RESTBlogs.Services.Contracts\RESTBlogs.Services.Contracts.csproj">
+      <Project>{631F36CF-D21C-450A-BB3B-E8052036AE1A}</Project>
+      <Name>RESTBlogs.Services.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\RESTBlogs.Services.Implementation\RESTBlogs.Services.Implementation.csproj">
       <Project>{D52109C6-1722-489A-A25C-0F27287DA4CD}</Project>
       <Name>RESTBlogs.Services.Implementation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RESTBlogs.Services\RESTBlogs.Services.csproj">
-      <Project>{A4A684C6-1CCB-4FC4-A8E1-9EB4B54901DD}</Project>
-      <Name>RESTBlogs.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
