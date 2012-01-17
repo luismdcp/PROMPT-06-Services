@@ -14,12 +14,10 @@ namespace GitHubSoap.Client.Inspectors
 
         public void ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime)
         {
-            string user = ConfigurationSettings.AppSettings["User"];
-            string password = ConfigurationSettings.AppSettings["Password"];
-            var inspector = new AuthenticationHeaderInspector();
-            inspector.User = user;
-            inspector.Password = password;
+            string user = ConfigurationManager.AppSettings["User"];
+            string password = ConfigurationManager.AppSettings["Password"];
 
+            var inspector = new AuthenticationHeaderInspector {User = user, Password = password};
             clientRuntime.MessageInspectors.Add(inspector);
         }
 

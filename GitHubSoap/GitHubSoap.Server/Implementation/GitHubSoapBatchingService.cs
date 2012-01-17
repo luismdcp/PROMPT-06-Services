@@ -12,19 +12,21 @@ namespace GitHubSoap.Server.Implementation
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, IncludeExceptionDetailInFaults = true)]
     public class GitHubSoapBatchingService : IGitHubSoapBatchingService
     {
-        private static readonly Dictionary<Type, IRequestHandler> requestTypesToRequestHandlerTypes;
+        private static readonly Dictionary<Type, IRequestHandler> RequestTypesToRequestHandlerTypes;
 
         static GitHubSoapBatchingService()
         {
-            requestTypesToRequestHandlerTypes = new Dictionary<Type, IRequestHandler>();
-            requestTypesToRequestHandlerTypes.Add(typeof(CreateIssueRequest), new CreateIssueRequestHandler());
-            requestTypesToRequestHandlerTypes.Add(typeof(CreateRepoRequest), new CreateRepoRequestHandler());
-            requestTypesToRequestHandlerTypes.Add(typeof(EditIssueRequest), new EditIssueRequestHandler());
-            requestTypesToRequestHandlerTypes.Add(typeof(EditRepoRequest), new EditRepoRequestHandler());
-            requestTypesToRequestHandlerTypes.Add(typeof(GetAllIssuesRequest), new GetAllIssuesRequestHandler());
-            requestTypesToRequestHandlerTypes.Add(typeof(GetAllReposRequest), new GetAllReposRequestHandler());
-            requestTypesToRequestHandlerTypes.Add(typeof(GetIssueRequest), new GetIssueRequestHandler());
-            requestTypesToRequestHandlerTypes.Add(typeof(GetRepoRequest), new GetRepoRequestHandler());
+            RequestTypesToRequestHandlerTypes = new Dictionary<Type, IRequestHandler>
+                                                    {
+                                                        {typeof (CreateIssueRequest), new CreateIssueRequestHandler()},
+                                                        {typeof (CreateRepoRequest), new CreateRepoRequestHandler()},
+                                                        {typeof (EditIssueRequest), new EditIssueRequestHandler()},
+                                                        {typeof (EditRepoRequest), new EditRepoRequestHandler()},
+                                                        {typeof (GetAllIssuesRequest), new GetAllIssuesRequestHandler()},
+                                                        {typeof (GetAllReposRequest), new GetAllReposRequestHandler()},
+                                                        {typeof (GetIssueRequest), new GetIssueRequestHandler()},
+                                                        {typeof (GetRepoRequest), new GetRepoRequestHandler()}
+                                                    };
         }
 
         public Response[] Process(params Request[] requests)
@@ -34,7 +36,7 @@ namespace GitHubSoap.Server.Implementation
             foreach (var request in requests)
             {
                 var requestType = request.GetType();
-                var handlerType = requestTypesToRequestHandlerTypes[requestType];
+                var handlerType = RequestTypesToRequestHandlerTypes[requestType];
 
                 responses.Add(handlerType.Handle(request));
             }

@@ -5,8 +5,6 @@ namespace GitHubSoap.Domain.Issues
     [DataContract]
     public class Label
     {
-        #region Properties
-
         [DataMember]
         public string color { get; set; }
 
@@ -15,7 +13,5 @@ namespace GitHubSoap.Domain.Issues
 
         [DataMember]
         public string url { get; set; }
-
-        #endregion
     }
 }

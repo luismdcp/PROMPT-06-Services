@@ -6,9 +6,8 @@ using System.Net.Http.Headers;
 using System.Text;
 using GitHubSoap.Domain.Issues;
 using GitHubSoap.Repositories.Contracts;
-using System.Net;
 
-namespace GitHubSoap.Repositories.REST
+namespace GitHubSoap.Repositories.Implementation
 {
     public class IssuesRepository : IIssuesRepository
     {
@@ -63,7 +62,6 @@ namespace GitHubSoap.Repositories.REST
             request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             client.DefaultRequestHeaders.Authorization = CreateBasicAuthentication(user, password);
             var response = client.SendAsync(request).Result;
-            var t = response.Content.ReadAsAsync<WebException>().Result;
             var result = response.Content.ReadAsAsync<Issue>().Result;
 
             return result;

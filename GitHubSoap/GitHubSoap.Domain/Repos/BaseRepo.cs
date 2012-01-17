@@ -5,8 +5,6 @@ namespace GitHubSoap.Domain.Repos
     [DataContract]
     public class BaseRepo
     {
-        #region Properties
-
         [DataMember]
         public string name { get; set; }
 
@@ -24,7 +22,5 @@ namespace GitHubSoap.Domain.Repos
 
         [DataMember]
         public bool has_downloads { get; set; }
-
-        #endregion
     }
 }

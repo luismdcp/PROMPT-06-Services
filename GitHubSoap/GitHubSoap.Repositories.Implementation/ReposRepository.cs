@@ -7,7 +7,7 @@ using System.Text;
 using GitHubSoap.Domain.Repos;
 using GitHubSoap.Repositories.Contracts;
 
-namespace GitHubSoap.Repositories.REST
+namespace GitHubSoap.Repositories.Implementation
 {
     public class ReposRepository : IReposRepository
     {

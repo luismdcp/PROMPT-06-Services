@@ -1,7 +1,0 @@
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Repositories.Contracts\bin\Debug\GitHubSoap.Repositories.Contracts.dll
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Repositories.Contracts\bin\Debug\GitHubSoap.Repositories.Contracts.pdb
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Repositories.Contracts\bin\Debug\GitHubSoap.Domain.dll
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Repositories.Contracts\bin\Debug\GitHubSoap.Domain.pdb
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Repositories.Contracts\obj\Debug\ResolveAssemblyReference.cache
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Repositories.Contracts\obj\Debug\GitHubSoap.Repositories.Contracts.dll
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Repositories.Contracts\obj\Debug\GitHubSoap.Repositories.Contracts.pdb

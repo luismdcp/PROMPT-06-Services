@@ -6,8 +6,6 @@ namespace GitHubSoap.Domain.Issues
     [DataContract]
     public class Milestone
     {
-        #region Properties
-
         [DataMember]
         public int closed_issues { get; set; }
 
@@ -34,7 +32,5 @@ namespace GitHubSoap.Domain.Issues
 
         [DataMember]
         public string url { get; set; }
-
-        #endregion
     }
 }

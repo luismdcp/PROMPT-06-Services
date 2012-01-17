@@ -6,8 +6,6 @@ namespace GitHubSoap.Domain.Repos
     [DataContract]
     public class Repo
     {
-        #region Properties
-
         [DataMember]
         public string language { get; set; }
 
@@ -52,7 +50,5 @@ namespace GitHubSoap.Domain.Repos
 
         [DataMember]
         public string url { get; set; }
-
-        #endregion
     }
 }

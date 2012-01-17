@@ -8,8 +8,8 @@
     <ProjectGuid>{7FA56978-5F3E-46D6-A51A-8CDB1C5C1DD6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GitHubSoap.Rep.Contracts</RootNamespace>
-    <AssemblyName>GitHubSoap.Rep.Contracts</AssemblyName>
+    <RootNamespace>GitHubSoap.Repositories.Contracts</RootNamespace>
+    <AssemblyName>GitHubSoap.Repositories.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,15 +30,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Include="IIssuesRepository.cs" />
     <Compile Include="IReposRepository.cs" />

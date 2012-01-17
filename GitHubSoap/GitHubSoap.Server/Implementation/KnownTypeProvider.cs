@@ -9,16 +9,16 @@ namespace GitHubSoap.Server.Implementation
 {
     public static class KnownTypeProvider
     {
-        private static readonly List<Type> knownTypes;
+        private static readonly List<Type> KnownTypes;
 
         static KnownTypeProvider()
         {
-            knownTypes = BuildListOfKnownTypes();
+            KnownTypes = BuildListOfKnownTypes();
         }
 
         public static IEnumerable<Type> GetKnownTypes(ICustomAttributeProvider provider)
         {
-            return knownTypes;
+            return KnownTypes;
         }
 
         private static List<Type> BuildListOfKnownTypes()

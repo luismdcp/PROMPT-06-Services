@@ -8,8 +8,8 @@ namespace GitHubSoap.Client.Inspectors
 {
     public class AuthenticationHeaderInspector : IClientMessageInspector
     {
-        public string User { get; set; }
-        public string Password { get; set; }
+        public string User { private get; set; }
+        public string Password { private get; set; }
 
         public void AfterReceiveReply(ref Message reply, object correlationState)
         {
@@ -22,7 +22,11 @@ namespace GitHubSoap.Client.Inspectors
             byte[] authenticationBytes = Encoding.ASCII.GetBytes(string.Concat(this.User, ":", this.Password));
             string base64 = Convert.ToBase64String(authenticationBytes);
             string authorization = string.Concat("Basic ", base64);
-            httpRequest.Headers["authorization"] = authorization;
+
+            if (httpRequest != null)
+            {
+                httpRequest.Headers["authorization"] = authorization;
+            }
 
             return null;
         }

@@ -6,8 +6,6 @@ namespace GitHubSoap.Domain.Issues
     [DataContract]
     public class IssueCreate
     {
-        #region Properties
-
         [DataMember]
         public string title { get; set; }
 
@@ -22,7 +20,5 @@ namespace GitHubSoap.Domain.Issues
 
         [DataMember]
         public IList<Label> labels { get; set; }
-
-        #endregion
     }
 }

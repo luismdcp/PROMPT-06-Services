@@ -3,7 +3,6 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
-using GitHubSoap.Server.Inspectors.CallsRateControl;
 
 namespace GitHubSoap.Server.Inspectors.CallsRateControl
 {
@@ -19,7 +18,10 @@ namespace GitHubSoap.Server.Inspectors.CallsRateControl
             RequestCallRateInspector interceptor = new RequestCallRateInspector();
             ChannelDispatcher endpointDispatcher = serviceHostBase.ChannelDispatchers[0] as ChannelDispatcher;
 
-            endpointDispatcher.Endpoints[0].DispatchRuntime.MessageInspectors.Add(interceptor);
+            if (endpointDispatcher != null)
+            {
+                endpointDispatcher.Endpoints[0].DispatchRuntime.MessageInspectors.Add(interceptor);
+            }
         }
 
         public void Validate(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase)

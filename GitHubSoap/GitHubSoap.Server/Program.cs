@@ -16,8 +16,8 @@ namespace GitHubSoap.Server
         public static void Main(string[] args)
         {
             ContainerBootstrapper.BootstrapStructureMap();
-            string serviceBaseURI = ConfigurationSettings.AppSettings["ServiceBaseURI"];
-            string batchingServiceBaseURI = ConfigurationSettings.AppSettings["BatchingServiceBaseURI"];
+            string serviceBaseURI = ConfigurationManager.AppSettings["ServiceBaseURI"];
+            string batchingServiceBaseURI = ConfigurationManager.AppSettings["BatchingServiceBaseURI"];
 
             // Build and start the Regular Service.
             using (var host = new ServiceHost(typeof(GitHubSoapService), new Uri(serviceBaseURI)))
@@ -26,7 +26,7 @@ namespace GitHubSoap.Server
 
                 host.Description.Behaviors.Add(new AuthenticationHeaderBehavior());
                 host.Description.Behaviors.Add(new RequestCallRateBehavior());
-                host.Description.Behaviors.Add(new ServiceMetadataBehavior()
+                host.Description.Behaviors.Add(new ServiceMetadataBehavior
                                                 {
                                                     HttpGetEnabled = true,
                                                     HttpGetUrl = new Uri(serviceBaseURI + "/GitHubSoap/metadata")
@@ -41,8 +41,8 @@ namespace GitHubSoap.Server
                 {
                     batchingHost.AddServiceEndpoint(typeof(IGitHubSoapBatchingService), new BasicHttpBinding(), "GitHubSoapBatching");
 
-                    batchingHost.Description.Behaviors.Add(new ServiceMetadataBehavior()
-                                                            {
+                    batchingHost.Description.Behaviors.Add(new ServiceMetadataBehavior
+                                                               {
                                                                 HttpGetEnabled = true,
                                                                 HttpGetUrl = new Uri(batchingServiceBaseURI + "/GitHubSoapBatching/metadata")
                                                             });

@@ -2,7 +2,6 @@
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Dispatcher;
-using GitHubSoap.Server.Inspectors.CallsRateControl;
 
 namespace GitHubSoap.Server.Inspectors.CallsRateControl
 {
@@ -11,8 +10,12 @@ namespace GitHubSoap.Server.Inspectors.CallsRateControl
         public object AfterReceiveRequest(ref Message request, IClientChannel channel, InstanceContext instanceContext)
         {
             RemoteEndpointMessageProperty remoteEndpoint = request.Properties[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
-            IPAddress address = IPAddress.Parse(remoteEndpoint.Address);
-            ClientCallsRateControl.IncrementOrAddClientCalls(address.ToString());
+
+            if (remoteEndpoint != null)
+            {
+                IPAddress address = IPAddress.Parse(remoteEndpoint.Address);
+                ClientCallsRateControl.IncrementOrAddClientCalls(address.ToString());
+            }
 
             return null;
         }

@@ -3,11 +3,11 @@ using GitHubSoap.Domain.Issues;
 using GitHubSoap.Repositories.Contracts;
 using GitHubSoap.Services.Contracts;
 
-namespace GitHubSoap.Services.Persistence
+namespace GitHubSoap.Services.Implementation
 {
     public class IssuesService : IIssuesService
     {
-        private IIssuesRepository issuesRepository;
+        private readonly IIssuesRepository issuesRepository;
 
         public IssuesService(IIssuesRepository issuesRepository)
         {

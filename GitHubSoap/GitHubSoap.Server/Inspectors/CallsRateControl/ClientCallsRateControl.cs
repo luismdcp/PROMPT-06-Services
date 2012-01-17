@@ -7,7 +7,7 @@ namespace GitHubSoap.Server.Inspectors.CallsRateControl
 {
     public static class ClientCallsRateControl
     {
-        private static ConcurrentDictionary<string, ClientCallsInfo> CallsData;
+        private static readonly ConcurrentDictionary<string, ClientCallsInfo> CallsData;
 
         static ClientCallsRateControl()
         {
@@ -18,12 +18,12 @@ namespace GitHubSoap.Server.Inspectors.CallsRateControl
         {
             if (CallsData.ContainsKey(clientIPAddress))
             {
-                ClientCallsInfo callsInfo = null;
+                ClientCallsInfo callsInfo;
                 CallsData.TryGetValue(clientIPAddress, out callsInfo);
 
                 TimeSpan timeElapsed = DateTime.Now - callsInfo.TimeFirstCall;
-                int callsPerHour = Convert.ToInt32(ConfigurationSettings.AppSettings["CallsPerHour"]);
-                int timeIntervalInMinutes = Convert.ToInt32(ConfigurationSettings.AppSettings["TimeIntervalInMinutes"]);
+                int callsPerHour = Convert.ToInt32(ConfigurationManager.AppSettings["CallsPerHour"]);
+                int timeIntervalInMinutes = Convert.ToInt32(ConfigurationManager.AppSettings["TimeIntervalInMinutes"]);
 
                 lock (callsInfo)
                 {

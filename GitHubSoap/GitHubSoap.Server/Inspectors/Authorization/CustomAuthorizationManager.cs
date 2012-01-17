@@ -23,8 +23,8 @@ namespace GitHubSoap.Server.Inspectors.Authorization
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
             }
 
-            string user = String.Empty;
-            string password = string.Empty;
+            string user;
+            string password;
 
             this.ParseUserPasswordFromHeader(authorizationHeader, out user, out password);
 

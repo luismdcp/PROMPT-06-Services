@@ -22,8 +22,8 @@ namespace GitHubSoap.Server.Inspectors.Authentication
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
             }
 
-            string user = String.Empty;
-            string password = string.Empty;
+            string user;
+            string password;
 
             this.ParseUserPasswordFromHeader(authorizationHeader, out user, out password);
 
@@ -42,7 +42,7 @@ namespace GitHubSoap.Server.Inspectors.Authentication
             return instanceContext;
         }
 
-        public void BeforeSendReply(ref System.ServiceModel.Channels.Message reply, object correlationState)
+        public void BeforeSendReply(ref Message reply, object correlationState)
         {
             
         }

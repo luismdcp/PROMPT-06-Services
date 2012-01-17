@@ -34,13 +34,6 @@
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainerBootstrapper.cs" />
@@ -50,13 +43,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GitHubSoap.Rep.Contracts\GitHubSoap.Repositories.Contracts.csproj">
-      <Project>{7FA56978-5F3E-46D6-A51A-8CDB1C5C1DD6}</Project>
+    <ProjectReference Include="..\GitHubSoap.Repositories.Contracts\GitHubSoap.Repositories.Contracts.csproj">
+      <Project>{2FB2C9F9-AE69-43F7-AC07-1D1F50B87008}</Project>
       <Name>GitHubSoap.Repositories.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GitHubSoap.Repositories.Implementation\GitHubSoap.Repositories.REST.csproj">
+    <ProjectReference Include="..\GitHubSoap.Repositories.Implementation\GitHubSoap.Repositories.Implementation.csproj">
       <Project>{11D1F410-5560-4574-8D86-34A28A4171AB}</Project>
-      <Name>GitHubSoap.Repositories.REST</Name>
+      <Name>GitHubSoap.Repositories.Implementation</Name>
     </ProjectReference>
     <ProjectReference Include="..\GitHubSoap.Security.Authentication.InMemory\GitHubSoap.Security.Authentication.InMemory.csproj">
       <Project>{64870667-16E6-4264-AD79-454ECF42ED26}</Project>
@@ -74,9 +67,9 @@
       <Project>{6D69520D-AF03-4BA7-A8D6-4D68260102A0}</Project>
       <Name>GitHubSoap.Services.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GitHubSoap.Services.Implementation\GitHubSoap.Services.Persistence.csproj">
+    <ProjectReference Include="..\GitHubSoap.Services.Implementation\GitHubSoap.Services.Implementation.csproj">
       <Project>{B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8}</Project>
-      <Name>GitHubSoap.Services.Persistence</Name>
+      <Name>GitHubSoap.Services.Implementation</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

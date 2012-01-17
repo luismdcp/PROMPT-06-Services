@@ -9,12 +9,12 @@ namespace GitHubSoap.Client
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             // Settings needed to connect and use the Batching Service.
-            string user = ConfigurationSettings.AppSettings["User"];
-            string password = ConfigurationSettings.AppSettings["Password"];
-            string serviceEndpointAddress = ConfigurationSettings.AppSettings["ServiceEndpointAddress"];
+            string user = ConfigurationManager.AppSettings["User"];
+            string password = ConfigurationManager.AppSettings["Password"];
+            string serviceEndpointAddress = ConfigurationManager.AppSettings["ServiceEndpointAddress"];
 
             // Creation of a channel connected to the Regular Service.
             var endpoint = new EndpointAddress(serviceEndpointAddress);
@@ -24,13 +24,15 @@ namespace GitHubSoap.Client
             var serviceChannel = channelFactory.CreateChannel();
 
             // Create a new repository.
-            var newRepo = new RepoCreate();
-            newRepo.name = "Test-Repository";
-            newRepo.description = "Just a test repository";
-            newRepo.has_downloads = true;
-            newRepo.has_issues = true;
-            newRepo.has_wiki = false;
-            newRepo.@private = false;
+            var newRepo = new RepoCreate
+                              {
+                                  name = "Test-Repository",
+                                  description = "Just a test repository",
+                                  has_downloads = true,
+                                  has_issues = true,
+                                  has_wiki = false,
+                                  @private = false
+                              };
 
             var createdRepo = serviceChannel.CreateRepo(user, password, newRepo);
 
@@ -38,24 +40,15 @@ namespace GitHubSoap.Client
             var repo = serviceChannel.GetRepo(user, "Test-Repository");
 
             // Edit the repository.
-            var editRepo = new RepoEdit();
-            editRepo.has_wiki = true;
-            editRepo.name = "Test-Repository";
-
+            var editRepo = new RepoEdit {has_wiki = true, name = "Test-Repository"};
             serviceChannel.EditRepo(user, password, "Test-Repository", editRepo);
 
             // Create an issue in the created repository.
-            var newIssue = new IssueCreate();
-            newIssue.title = "Found a bug";
-            newIssue.body = "I'm having a problem with this.";
-            newIssue.assignee = "luismdcp";
-
+            var newIssue = new IssueCreate {title = "Found a bug", body = "I'm having a problem with this.", assignee = "luismdcp"};
             var createdIssue = serviceChannel.CreateIssue(user, password, "Test-Repository", newIssue);
 
             // Edit the created issue.
-            var editIssue = new IssueEdit();
-            editIssue.milestone = 1;
-
+            var editIssue = new IssueEdit {milestone = 1};
             serviceChannel.EditIssue(user, password, "Test-Repository", createdIssue.id, editIssue);
         }
     }
