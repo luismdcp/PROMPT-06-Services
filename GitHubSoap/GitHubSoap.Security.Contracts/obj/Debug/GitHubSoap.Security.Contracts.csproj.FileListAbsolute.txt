@@ -1,0 +1,5 @@
+C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Contracts\bin\Debug\GitHubSoap.Security.Contracts.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Contracts\bin\Debug\GitHubSoap.Security.Contracts.pdb
+C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Contracts\obj\Debug\GitHubSoap.Security.Contracts.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Contracts\obj\Debug\GitHubSoap.Security.Contracts.pdb
