@@ -1,7 +1,0 @@
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Authentication.InMemory\bin\Debug\GitHubSoap.Security.Authentication.InMemory.dll
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Authentication.InMemory\bin\Debug\GitHubSoap.Security.Authentication.InMemory.pdb
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Authentication.InMemory\bin\Debug\GitHubSoap.Security.Contracts.dll
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Authentication.InMemory\bin\Debug\GitHubSoap.Security.Contracts.pdb
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Authentication.InMemory\obj\Debug\ResolveAssemblyReference.cache
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Authentication.InMemory\obj\Debug\GitHubSoap.Security.Authentication.InMemory.dll
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security.Authentication.InMemory\obj\Debug\GitHubSoap.Security.Authentication.InMemory.pdb
