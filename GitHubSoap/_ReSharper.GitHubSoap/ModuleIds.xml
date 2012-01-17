@@ -105,20 +105,25 @@
   <Module PersistentId="System.Messaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Messaging" />
   <Module PersistentId="System.IdentityModel.Selectors, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.IdentityModel.Selectors" />
   <Module PersistentId="Microsoft.Transactions.Bridge, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="Microsoft.Transactions.Bridge" />
-  <Module PersistentId="GitHubSoap.Domain" ModuleId="GitHubSoap.Domain_1" />
-  <Module PersistentId="GitHubSoap.Services.Contracts" ModuleId="GitHubSoap.Services.Contracts_1" />
-  <Module PersistentId="GitHubSoap.IoC" ModuleId="GitHubSoap.IoC_1" />
-  <Module PersistentId="GitHubSoap.Services.Implementation" ModuleId="GitHubSoap.Services.Implementation" />
-  <Module PersistentId="GitHubSoap.Repositories.Contracts" ModuleId="GitHubSoap.Repositories.Contracts" />
-  <Module PersistentId="GitHubSoap.Security.Authorization.InMemory" ModuleId="GitHubSoap.Security.Authorization.InMemory_1" />
-  <Module PersistentId="GitHubSoap.Security.Authentication.InMemory" ModuleId="GitHubSoap.Security.Authentication.InMemory_1" />
-  <Module PersistentId="GitHubSoap.Security.Contracts" ModuleId="GitHubSoap.Security.Contracts_1" />
-  <Module PersistentId="GitHubSoap.Repositories.Implementation" ModuleId="GitHubSoap.Repositories.Implementation" />
-  <Module PersistentId="GitHubSoap.Client" ModuleId="GitHubSoap.Client_1" />
-  <Module PersistentId="GitHubSoap.Server" ModuleId="GitHubSoap.Server_1" />
-  <Module PersistentId="GitHubSoap.Client.Batching" ModuleId="GitHubSoap.Client.Batching_1" />
-  <Module PersistentId="Microsoft.Net.Http.Formatting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="Microsoft.Net.Http.Formatting_1" />
-  <Module PersistentId="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="System.Net.Http_1" />
+  <Module PersistentId="Microsoft.Json, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="Microsoft.Json" />
+  <Module PersistentId="Microsoft.ApplicationServer.HttpEnhancements, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="Microsoft.ApplicationServer.HttpEnhancements" />
+  <Module PersistentId="EntityDataModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="EntityDataModel" />
+  <Module PersistentId="Microsoft.Data.Spatial, Version=4.99.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="Microsoft.Data.Spatial" />
+  <Module PersistentId="Microsoft.Net.Http.Formatting.OData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="Microsoft.Net.Http.Formatting.OData" />
+  <Module PersistentId="System.Data.OData, Version=4.99.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="System.Data.OData" />
+  <Module PersistentId="System.ComponentModel.DataAnnotations, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="System.ComponentModel.DataAnnotations" />
+  <Module PersistentId="GitHubSoap.IoC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.IoC_1" />
+  <Module PersistentId="GitHubSoap.Repositories.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.Repositories.Contracts" />
+  <Module PersistentId="GitHubSoap.Repositories.Implementation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.Repositories.Implementation" />
+  <Module PersistentId="GitHubSoap.Services.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.Services.Contracts_1" />
+  <Module PersistentId="GitHubSoap.Services.Implementation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.Services.Implementation" />
+  <Module PersistentId="GitHubSoap.Security.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.Security.Contracts_1" />
+  <Module PersistentId="GitHubSoap.Security.Authentication.InMemory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.Security.Authentication.InMemory_1" />
+  <Module PersistentId="GitHubSoap.Security.Authorization.InMemory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.Security.Authorization.InMemory_1" />
+  <Module PersistentId="GitHubSoap.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.Domain_1" />
+  <Module PersistentId="GitHubSoap.Client.Batching, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.Client.Batching_1" />
+  <Module PersistentId="GitHubSoap.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.Client_1" />
+  <Module PersistentId="GitHubSoap.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" ModuleId="GitHubSoap.Server_1" />
   <Module PersistentId="Microsoft.ApplicationServer.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="Microsoft.ApplicationServer.Http_1" />
   <Module PersistentId="StructureMap, Version=2.6.3.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223" ModuleId="StructureMap_1" />
 </Modules>

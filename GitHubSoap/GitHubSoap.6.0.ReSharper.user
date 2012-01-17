@@ -1,7 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Requests/f:GetAllIssuesRequest.cs" caret="0" fromTop="0" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Requests/f:GetAllReposRequest.cs" caret="0" fromTop="0" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Requests/f:GetIssueRequest.cs" caret="0" fromTop="0" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Requests/f:GetRepoRequest.cs" caret="0" fromTop="0" />
@@ -19,7 +18,6 @@
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authentication/f:AuthenticationHeaderBehavior.cs" caret="0" fromTop="0" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authentication/f:AuthenticationHeaderInspector.cs" caret="458" fromTop="14" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authorization/f:CustomAuthorizationManager.cs" caret="799" fromTop="17" />
-      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/f:Program.cs" caret="623" fromTop="18" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:ClientCallsRateControl.cs" caret="1578" fromTop="17" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:RequestCallRateBehavior.cs" caret="1049" fromTop="20" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:RequestCallRateInspector.cs" caret="544" fromTop="12" />
@@ -28,17 +26,17 @@
       <File id="20968ABF-3B2C-4EA2-B595-F26BE96339C7/d:Users/f:User.cs" caret="125" fromTop="6" />
       <File id="9EED1FB7-78F6-4693-8555-A105BFA97DEE/f:IAuthorizationService.cs" caret="68" fromTop="3" />
       <File id="20968ABF-3B2C-4EA2-B595-F26BE96339C7/d:Issues/f:Milestone.cs" caret="0" fromTop="0" />
-      <File id="683F609A-38EB-4ABF-85DA-A10E17E88CBD/f:Program.cs" caret="0" fromTop="0" />
       <File id="20968ABF-3B2C-4EA2-B595-F26BE96339C7/d:Issues/f:Issue.cs" caret="163" fromTop="6" />
-      <File id="9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99/f:Program.cs" caret="1630" fromTop="17" />
+      <File id="11D1F410-5560-4574-8D86-34A28A4171AB/f:ReposRepository.cs" caret="3062" fromTop="19" />
+      <File id="9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99/f:Program.cs" caret="0" fromTop="0" />
+      <File id="683F609A-38EB-4ABF-85DA-A10E17E88CBD/f:Program.cs" caret="421" fromTop="5" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/f:Program.cs" caret="553" fromTop="14" />
     </RecentFiles>
     <RecentEdits>
-      <File id="B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8/f:IssuesService.cs" caret="307" fromTop="9" />
       <File id="B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8/f:ReposService.cs" caret="300" fromTop="9" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authentication/f:AuthenticationHeaderInspector.cs" caret="267" fromTop="8" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authentication/f:AuthenticationHeaderInspector.cs" caret="956" fromTop="13" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authentication/f:AuthenticationHeaderInspector.cs" caret="1617" fromTop="17" />
-      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/f:Program.cs" caret="720" fromTop="19" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/f:Program.cs" caret="1268" fromTop="17" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/f:Program.cs" caret="2216" fromTop="17" />
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Requests/f:Request.cs" caret="0" fromTop="0" />
@@ -63,6 +61,8 @@
       <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:ClientCallsInfo.cs" caret="216" fromTop="7" />
       <File id="683F609A-38EB-4ABF-85DA-A10E17E88CBD/f:Program.cs" caret="322" fromTop="11" />
       <File id="9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99/f:Program.cs" caret="294" fromTop="11" />
+      <File id="9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99/f:Program.cs" caret="1947" fromTop="11" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/f:Program.cs" caret="553" fromTop="14" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
@@ -73,6 +73,7 @@
       <Item value="x" priority="31" />
       <Item value="System" priority="30" />
       <Item value="Net" priority="27" />
+      <Item value="true" priority="32" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:StructureMap.IInitializationExpression">
       <Item value="For`1" priority="26" />

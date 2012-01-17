@@ -14,7 +14,10 @@ namespace GitHubSoap.Server.Inspectors.Authorization
         protected override bool CheckAccessCore(OperationContext operationContext)
         {
             string action = operationContext.RequestContext.RequestMessage.Headers.Action;
+
+            // parse the name of the operation that it is being invoked.
             string operationName = action.Substring(action.LastIndexOf('/') + 1);
+
             var httpRequest = operationContext.IncomingMessageProperties["httpRequest"] as HttpRequestMessageProperty;
             var authorizationHeader = httpRequest.Headers["Authorization"];
 

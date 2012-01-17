@@ -13,3 +13,8 @@ C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Domain\bin\Debug\RESTB
 C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Domain\obj\Debug\ResolveAssemblyReference.cache
 C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Domain\obj\Debug\RESTBlogs.Domain.dll
 C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Domain\obj\Debug\RESTBlogs.Domain.pdb
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Domain\bin\Debug\RESTBlogs.Domain.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Domain\bin\Debug\RESTBlogs.Domain.pdb
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Domain\obj\Debug\ResolveAssemblyReference.cache
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Domain\obj\Debug\RESTBlogs.Domain.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Domain\obj\Debug\RESTBlogs.Domain.pdb

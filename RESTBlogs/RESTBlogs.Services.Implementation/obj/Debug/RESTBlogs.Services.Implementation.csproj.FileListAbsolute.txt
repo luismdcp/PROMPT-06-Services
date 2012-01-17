@@ -9,3 +9,14 @@ C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementatio
 C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\obj\Debug\ResolveAssemblyReference.cache
 C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\obj\Debug\RESTBlogs.Services.Implementation.dll
 C:\PROMPT11\uc06\PROMPT11-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\obj\Debug\RESTBlogs.Services.Implementation.pdb
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Services.Implementation.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Services.Implementation.pdb
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Domain.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Repositories.Contracts.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Services.Contracts.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Domain.pdb
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Repositories.Contracts.pdb
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\bin\Debug\RESTBlogs.Services.Contracts.pdb
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\obj\Debug\ResolveAssemblyReference.cache
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\obj\Debug\RESTBlogs.Services.Implementation.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Implementation\obj\Debug\RESTBlogs.Services.Implementation.pdb

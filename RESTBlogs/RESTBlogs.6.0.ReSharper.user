@@ -22,8 +22,10 @@
       <File id="D52109C6-1722-489A-A25C-0F27287DA4CD/f:CommentsService.cs" caret="0" fromTop="0" />
       <File id="D52109C6-1722-489A-A25C-0F27287DA4CD/f:PostsService.cs" caret="0" fromTop="0" />
       <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="312" fromTop="12" />
-      <File id="9DFC4A7D-2255-4737-82E6-F82BD70709E6/f:BlogsRepository.cs" caret="0" fromTop="0" />
       <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="34265" fromTop="17" />
+      <File id="9DFC4A7D-2255-4737-82E6-F82BD70709E6/f:BlogsRepository.cs" caret="0" fromTop="0" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:app.config" caret="0" fromTop="0" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:packages.config" caret="0" fromTop="0" />
     </RecentFiles>
     <RecentEdits>
       <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="28338" fromTop="17" />

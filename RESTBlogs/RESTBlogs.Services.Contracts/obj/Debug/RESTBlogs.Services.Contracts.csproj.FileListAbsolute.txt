@@ -1,0 +1,7 @@
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Contracts\bin\Debug\RESTBlogs.Services.Contracts.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Contracts\bin\Debug\RESTBlogs.Services.Contracts.pdb
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Contracts\bin\Debug\RESTBlogs.Domain.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Contracts\bin\Debug\RESTBlogs.Domain.pdb
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Contracts\obj\Debug\RESTBlogs.Services.Contracts.dll
+C:\PROMPT11\uc06\PROMPT-06-Services\RESTBlogs\RESTBlogs.Services.Contracts\obj\Debug\RESTBlogs.Services.Contracts.pdb

@@ -11,7 +11,7 @@ namespace GitHubSoap.Client
     {
         public static void Main()
         {
-            // Settings needed to connect and use the Batching Service.
+            // Settings needed to connect and use the Regular Service.
             string user = ConfigurationManager.AppSettings["User"];
             string password = ConfigurationManager.AppSettings["Password"];
             string serviceEndpointAddress = ConfigurationManager.AppSettings["ServiceEndpointAddress"];
@@ -40,7 +40,7 @@ namespace GitHubSoap.Client
             var repo = serviceChannel.GetRepo(user, "Test-Repository");
 
             // Edit the repository.
-            var editRepo = new RepoEdit {has_wiki = true, name = "Test-Repository"};
+            var editRepo = new RepoEdit { has_downloads = false, name = "Test-Repository" };
             serviceChannel.EditRepo(user, password, "Test-Repository", editRepo);
 
             // Create an issue in the created repository.
