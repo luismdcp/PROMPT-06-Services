@@ -1,5 +1,0 @@
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security\bin\Debug\GitHubSoap.Security.dll
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security\bin\Debug\GitHubSoap.Security.pdb
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security\obj\Debug\ResolveAssemblyReference.cache
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security\obj\Debug\GitHubSoap.Security.dll
-C:\PROMPT11\uc06\PROMPT-06-Services\GitHubSoap\GitHubSoap.Security\obj\Debug\GitHubSoap.Security.pdb

@@ -117,4 +117,8 @@
   <Module PersistentId="GitHubSoap.Client" ModuleId="GitHubSoap.Client_1" />
   <Module PersistentId="GitHubSoap.Server" ModuleId="GitHubSoap.Server_1" />
   <Module PersistentId="GitHubSoap.Client.Batching" ModuleId="GitHubSoap.Client.Batching_1" />
+  <Module PersistentId="Microsoft.Net.Http.Formatting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="Microsoft.Net.Http.Formatting_1" />
+  <Module PersistentId="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="System.Net.Http_1" />
+  <Module PersistentId="Microsoft.ApplicationServer.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="Microsoft.ApplicationServer.Http_1" />
+  <Module PersistentId="StructureMap, Version=2.6.3.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223" ModuleId="StructureMap_1" />
 </Modules>
