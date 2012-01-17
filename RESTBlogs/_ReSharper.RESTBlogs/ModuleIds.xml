@@ -1,9 +1,9 @@
 <Modules>
   <Module PersistentId="201015EB-8F60-4774-BCBE-E175C1E8DC3F" ModuleId="RESTBlogs.Domain" />
-  <Module PersistentId="A4A684C6-1CCB-4FC4-A8E1-9EB4B54901DD" ModuleId="RESTBlogs.Services" />
-  <Module PersistentId="5A84D010-0D3A-42E8-9B60-82A873B2EDCE" ModuleId="RESTBlogs.Repositories" />
   <Module PersistentId="3DA845C5-1025-4B1F-9CA5-9D8443B79875" ModuleId="RESTBlogs.Server" />
-  <Module PersistentId="C7FA3D62-0BD0-466B-8400-10CE90725FA8" ModuleId="RestService1.Client" />
-  <Module PersistentId="4EFCD92F-AC4A-4E7C-82CA-C4C5330BA90A" ModuleId="RestService1.Entities" />
-  <Module PersistentId="1E295E73-EA14-4321-A809-232C5B1104AD" ModuleId="RestService1.Service" />
+  <Module PersistentId="B8DD3C58-C678-40D4-97D7-002916551FF4" ModuleId="RESTBlogs.IoC" />
+  <Module PersistentId="9DFC4A7D-2255-4737-82E6-F82BD70709E6" ModuleId="RESTBlogs.Repositories.Implementation" />
+  <Module PersistentId="15028C99-8264-49D5-BECC-64ED68240914" ModuleId="RESTBlogs.Repositories.Contracts" />
+  <Module PersistentId="D52109C6-1722-489A-A25C-0F27287DA4CD" ModuleId="RESTBlogs.Services.Implementation" />
+  <Module PersistentId="631F36CF-D21C-450A-BB3B-E8052036AE1A" ModuleId="RESTBlogs.Services.Contracts" />
 </Modules>

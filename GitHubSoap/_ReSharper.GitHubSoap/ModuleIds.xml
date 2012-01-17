@@ -30,4 +30,6 @@
   <Module PersistentId="Microsoft.ApplicationServer.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="Microsoft.ApplicationServer.Http_2" />
   <Module PersistentId="Microsoft.Net.Http.Formatting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="Microsoft.Net.Http.Formatting_2" />
   <Module PersistentId="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="System.Net.Http_2" />
+  <Module PersistentId="Microsoft.Net.Http.Formatting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="Microsoft.Net.Http.Formatting_3" />
+  <Module PersistentId="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="System.Net.Http_3" />
 </Modules>

@@ -15,7 +15,7 @@ namespace RESTBlogs.Repositories.Implementation
 
         public List<Comment> GetAllFromPost(string postId)
         {
-            using (IDocumentSession session = this.documentStore.OpenSession())
+            using (IDocumentSession session = this.DocumentStore.OpenSession())
             {
                 return session.Query<Comment>().Where(c => c.postId == postId).ToList();
             }
@@ -23,7 +23,7 @@ namespace RESTBlogs.Repositories.Implementation
 
         public List<Comment> GetAllFromPost(string postId, int pageIndex, int pageSize)
         {
-            using (IDocumentSession session = this.documentStore.OpenSession())
+            using (IDocumentSession session = this.DocumentStore.OpenSession())
             {
                 return session.Query<Comment>().Where(c => c.postId == postId).Skip(pageIndex - 1).Take(pageSize).ToList();
             }
@@ -31,7 +31,7 @@ namespace RESTBlogs.Repositories.Implementation
 
         public List<Comment> GetAllFromUser(string userId)
         {
-            using (IDocumentSession session = this.documentStore.OpenSession())
+            using (IDocumentSession session = this.DocumentStore.OpenSession())
             {
                 return session.Query<Comment>().Where(c => c.author == userId).ToList();
             }

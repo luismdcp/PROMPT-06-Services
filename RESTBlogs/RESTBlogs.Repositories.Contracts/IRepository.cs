@@ -2,7 +2,7 @@
 
 namespace RESTBlogs.Repositories.Contracts
 {
-    public interface IRepository<T, TKey>
+    public interface IRepository<T, in TKey>
     {
         List<T> GetAll();
         List<T> GetAll(int pageIndex, int pageSize);

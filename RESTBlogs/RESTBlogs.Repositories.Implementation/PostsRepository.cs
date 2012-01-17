@@ -15,7 +15,7 @@ namespace RESTBlogs.Repositories.Implementation
 
         public List<Post> GetAllFromBlog(string blogId)
         {
-            using (IDocumentSession session = this.documentStore.OpenSession())
+            using (IDocumentSession session = this.DocumentStore.OpenSession())
             {
                 return session.Query<Post>().Where(p => p.blogId == blogId).ToList();
             }
@@ -23,7 +23,7 @@ namespace RESTBlogs.Repositories.Implementation
 
         public List<Post> GetAllFromBlog(string blogId, int pageIndex, int pageSize)
         {
-            using (IDocumentSession session = this.documentStore.OpenSession())
+            using (IDocumentSession session = this.DocumentStore.OpenSession())
             {
                 return session.Query<Post>().Where(p => p.blogId == blogId).Skip(pageIndex - 1).Take(pageSize).ToList();
             }

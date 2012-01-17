@@ -9,22 +9,22 @@ namespace RESTBlogs.Services.Implementation
     {
         public CommentsService(ICommentsRepository repository)
         {
-            this.repository = repository;
+            this.Repository = repository;
         }
 
         public List<Comment> GetAllFromPost(string postId)
         {
-            return ((ICommentsRepository) this.repository).GetAllFromPost(postId);
+            return ((ICommentsRepository) this.Repository).GetAllFromPost(postId);
         }
 
         public List<Comment> GetAllFromPost(string postId, int pageIndex, int pageSize)
         {
-            return ((ICommentsRepository) this.repository).GetAllFromPost(postId, pageIndex, pageSize);
+            return ((ICommentsRepository) this.Repository).GetAllFromPost(postId, pageIndex, pageSize);
         }
 
         public List<Comment> GetAllFromUser(string user)
         {
-            return ((ICommentsRepository) this.repository).GetAllFromUser(user);
+            return ((ICommentsRepository) this.Repository).GetAllFromUser(user);
         }
     }
 }

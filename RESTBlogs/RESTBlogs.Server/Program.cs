@@ -10,7 +10,7 @@ namespace RESTBlogs.Server
     {
         public static void Main(string[] args)
         {
-            string serviceURI = ConfigurationSettings.AppSettings["ServiceURI"];
+            string serviceURI = ConfigurationManager.AppSettings["ServiceURI"];
             HttpServiceHost host = new HttpServiceHost(typeof(RESTBlogsService), serviceURI);
 
             try

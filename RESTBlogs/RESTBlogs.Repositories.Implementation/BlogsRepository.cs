@@ -15,7 +15,7 @@ namespace RESTBlogs.Repositories.Implementation
 
         public List<string> GetTagCloud(string blogId)
         {
-            using (IDocumentSession session = this.documentStore.OpenSession())
+            using (IDocumentSession session = this.DocumentStore.OpenSession())
             {
                 return session.Query<Post>().Where(p => p.blogId == blogId).SelectMany(p => p.tags).Distinct().ToList();
             }
@@ -23,7 +23,7 @@ namespace RESTBlogs.Repositories.Implementation
 
         public List<Blog> GetBlogsFromUser(string userId)
         {
-            using (IDocumentSession session = this.documentStore.OpenSession())
+            using (IDocumentSession session = this.DocumentStore.OpenSession())
             {
                 return session.Query<Blog>().Where(b => b.author == userId).ToList();
             }

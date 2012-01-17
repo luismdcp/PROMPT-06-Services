@@ -4,7 +4,7 @@ using RESTBlogs.Services.Contracts;
 using RESTBlogs.Services.Implementation;
 using StructureMap;
 
-namespace RESTBlogs.IoC
+namespace RESTBlogs.DependencyInjection
 {
     public static class ContainerBootstrapper
     {
@@ -12,12 +12,12 @@ namespace RESTBlogs.IoC
         {
             ObjectFactory.Initialize(x =>
             {
-                x.ForRequestedType<IBlogsRepository>().TheDefaultIsConcreteType<BlogsRepository>();
-                x.ForRequestedType<ICommentsRepository>().TheDefaultIsConcreteType<CommentsRepository>();
-                x.ForRequestedType<IPostsRepository>().TheDefaultIsConcreteType<PostsRepository>();
-                x.ForRequestedType<IBlogsService>().TheDefaultIsConcreteType<BlogsService>();
-                x.ForRequestedType<ICommentsService>().TheDefaultIsConcreteType<CommentsService>();
-                x.ForRequestedType<IPostsService>().TheDefaultIsConcreteType<PostsService>();
+                x.For<IBlogsRepository>().Use<BlogsRepository>();
+                x.For<ICommentsRepository>().Use<CommentsRepository>();
+                x.For<IPostsRepository>().Use<PostsRepository>();
+                x.For<IBlogsService>().Use<BlogsService>();
+                x.For<ICommentsService>().Use<CommentsService>();
+                x.For<IPostsService>().Use<PostsService>();
             });
         }
     }

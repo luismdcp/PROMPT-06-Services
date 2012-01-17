@@ -1,0 +1,101 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Requests/f:GetAllIssuesRequest.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Requests/f:GetAllReposRequest.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Requests/f:GetIssueRequest.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Requests/f:GetRepoRequest.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Requests/f:Request.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Responses/f:GetAllIssuesResponse.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Responses/f:GetAllReposResponse.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Responses/f:IssueResponse.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Responses/f:RepoResponse.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Responses/f:Response.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Contracts/f:IGitHubSoapBatchingService.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Contracts/f:IGitHubSoapService.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Implementation/f:GitHubSoapBatchingService.cs" caret="2267" fromTop="24" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Implementation/f:GitHubSoapService.cs" caret="221" fromTop="6" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Implementation/f:KnownTypeProvider.cs" caret="328" fromTop="11" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authentication/f:AuthenticationHeaderBehavior.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authentication/f:AuthenticationHeaderInspector.cs" caret="458" fromTop="14" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authorization/f:CustomAuthorizationManager.cs" caret="799" fromTop="17" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/f:Program.cs" caret="623" fromTop="18" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:ClientCallsRateControl.cs" caret="1578" fromTop="17" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:RequestCallRateBehavior.cs" caret="1049" fromTop="20" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:RequestCallRateInspector.cs" caret="544" fromTop="12" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:ClientCallsInfo.cs" caret="216" fromTop="7" />
+      <File id="9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99/d:Inspectors/f:AuthenticationHeaderInspector.cs" caret="0" fromTop="0" />
+      <File id="20968ABF-3B2C-4EA2-B595-F26BE96339C7/d:Users/f:User.cs" caret="125" fromTop="6" />
+      <File id="9EED1FB7-78F6-4693-8555-A105BFA97DEE/f:IAuthorizationService.cs" caret="68" fromTop="3" />
+      <File id="20968ABF-3B2C-4EA2-B595-F26BE96339C7/d:Issues/f:Milestone.cs" caret="0" fromTop="0" />
+      <File id="9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99/f:Program.cs" caret="0" fromTop="0" />
+      <File id="683F609A-38EB-4ABF-85DA-A10E17E88CBD/f:Program.cs" caret="0" fromTop="0" />
+      <File id="20968ABF-3B2C-4EA2-B595-F26BE96339C7/d:Issues/f:Issue.cs" caret="163" fromTop="6" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8/f:IssuesService.cs" caret="307" fromTop="9" />
+      <File id="B1810FC2-D628-4ED6-B6F3-45EFAC1CD2B8/f:ReposService.cs" caret="300" fromTop="9" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authentication/f:AuthenticationHeaderInspector.cs" caret="267" fromTop="8" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authentication/f:AuthenticationHeaderInspector.cs" caret="956" fromTop="13" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authentication/f:AuthenticationHeaderInspector.cs" caret="1617" fromTop="17" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/f:Program.cs" caret="720" fromTop="19" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/f:Program.cs" caret="1268" fromTop="17" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/f:Program.cs" caret="2216" fromTop="17" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Requests/f:Request.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Batching/d:Responses/f:Response.cs" caret="0" fromTop="0" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Implementation/f:GitHubSoapBatchingService.cs" caret="618" fromTop="14" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Implementation/f:GitHubSoapBatchingService.cs" caret="758" fromTop="17" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Implementation/f:GitHubSoapBatchingService.cs" caret="1935" fromTop="14" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Implementation/f:GitHubSoapBatchingService.cs" caret="2265" fromTop="23" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Implementation/f:GitHubSoapService.cs" caret="221" fromTop="6" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Implementation/f:KnownTypeProvider.cs" caret="328" fromTop="11" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:Authorization/f:CustomAuthorizationManager.cs" caret="1060" fromTop="18" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:ClientCallsRateControl.cs" caret="305" fromTop="9" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:ClientCallsRateControl.cs" caret="664" fromTop="17" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:ClientCallsRateControl.cs" caret="1016" fromTop="18" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:RequestCallRateBehavior.cs" caret="181" fromTop="4" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:RequestCallRateBehavior.cs" caret="1049" fromTop="20" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:RequestCallRateInspector.cs" caret="121" fromTop="3" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:RequestCallRateInspector.cs" caret="654" fromTop="14" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:RequestCallRateInspector.cs" caret="544" fromTop="12" />
+      <File id="9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99/d:Inspectors/f:AuthenticationHeaderInspector.cs" caret="1030" fromTop="20" />
+      <File id="9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99/d:Inspectors/f:AuthenticationHeaderInspector.cs" caret="358" fromTop="4" />
+      <File id="9A087AF3-E442-45B3-9474-A5DD09AC4265/d:Inspectors/d:CallsRateControl/f:ClientCallsInfo.cs" caret="216" fromTop="7" />
+      <File id="683F609A-38EB-4ABF-85DA-A10E17E88CBD/f:Program.cs" caret="322" fromTop="11" />
+      <File id="9CC96A4F-F9E5-4FD4-9A6F-1C7C88611B99/f:Program.cs" caret="294" fromTop="11" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Qualified:@System.Configuration.ConfigurationManager">
+      <Item value="AppSettings" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="x" priority="31" />
+      <Item value="System" priority="30" />
+      <Item value="Net" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:StructureMap.IInitializationExpression">
+      <Item value="For`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:StructureMap.Configuration.DSL.Expressions.CreatePluginFamilyExpression`1">
+      <Item value="Use`1" priority="53" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.10\bin\net-2.0\lib</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">True</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

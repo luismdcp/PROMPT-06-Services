@@ -9,8 +9,8 @@ using System.ServiceModel.Syndication;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Xml;
+using RESTBlogs.DependencyInjection;
 using RESTBlogs.Domain;
-using RESTBlogs.IoC;
 using RESTBlogs.Services.Contracts;
 using StructureMap;
 
@@ -21,7 +21,7 @@ namespace RESTBlogs.Server.Service
     {
         #region Fields
 
-        private string serviceURI;
+        private readonly string serviceURI;
 
         #endregion
 
@@ -29,7 +29,7 @@ namespace RESTBlogs.Server.Service
 
         public RESTBlogsService()
         {
-            this.serviceURI = ConfigurationSettings.AppSettings["ServiceURI"];
+            this.serviceURI = ConfigurationManager.AppSettings["ServiceURI"];
             ContainerBootstrapper.BootstrapStructureMap();
         }
 
@@ -82,23 +82,27 @@ namespace RESTBlogs.Server.Service
                     }
                     else
                     {
-                        SyndicationFeed blogsFeed = new SyndicationFeed();
-                        blogsFeed.Title = new TextSyndicationContent("Blogs List");
-                        blogsFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
+                        SyndicationFeed blogsFeed = new SyndicationFeed
+                                                        {
+                                                            Title = new TextSyndicationContent("Blogs List"),
+                                                            LastUpdatedTime = new DateTimeOffset(DateTime.Now)
+                                                        };
+
                         blogsFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
 
-                        SyndicationItem item = null;
                         List<SyndicationItem> itemList = new List<SyndicationItem>();
                         blogsFeed.Items = itemList;
 
                         foreach (var blog in blogs)
                         {
-                            item = new SyndicationItem();
-                            item.Id = blog.Id;
-                            item.LastUpdatedTime = blog.updated;
-                            item.PublishDate = blog.published;
-                            item.Title = new TextSyndicationContent(blog.name);
-                            item.Summary = new TextSyndicationContent(blog.description);
+                            SyndicationItem item = new SyndicationItem
+                                                       {
+                                                           Id = blog.Id,
+                                                           LastUpdatedTime = blog.updated,
+                                                           PublishDate = blog.published,
+                                                           Title = new TextSyndicationContent(blog.name),
+                                                           Summary = new TextSyndicationContent(blog.description)
+                                                       };
 
                             item.Links.Add(SyndicationLink.CreateSelfLink(new Uri(String.Format("{0}/{1}", this.serviceURI, blog.Id))));
                             item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
@@ -159,25 +163,35 @@ namespace RESTBlogs.Server.Service
 
                 XmlReader reader = XmlReader.Create(request.Content.ReadAsStreamAsync().Result);
                 SyndicationFeed feed = SyndicationFeed.Load(reader);
-                SyndicationItem item = feed.Items.FirstOrDefault();
 
-                if (item != null)
+                if (feed != null)
                 {
-                    Blog newBlog = new Blog();
-                    newBlog.name = item.Title.Text;
-                    newBlog.description = item.Summary.Text;
-                    newBlog.updated = item.LastUpdatedTime;
-                    newBlog.published = item.PublishDate;
+                    SyndicationItem item = feed.Items.FirstOrDefault();
 
-                    var author = item.Authors.FirstOrDefault();
-                     
-                    if (author != null)
+                    if (item != null)
                     {
-                        newBlog.author = author.Name;
-                        blogsService.Create(newBlog);
+                        Blog newBlog = new Blog
+                                           {
+                                               name = item.Title.Text,
+                                               description = item.Summary.Text,
+                                               updated = item.LastUpdatedTime,
+                                               published = item.PublishDate
+                                           };
 
-                        response.StatusCode = HttpStatusCode.Created;
-                        response.Headers.Add("Location", String.Format("{0}/{1}", this.serviceURI, newBlog.Id));
+                        var author = item.Authors.FirstOrDefault();
+                     
+                        if (author != null)
+                        {
+                            newBlog.author = author.Name;
+                            blogsService.Create(newBlog);
+
+                            response.StatusCode = HttpStatusCode.Created;
+                            response.Headers.Add("Location", String.Format("{0}/{1}", this.serviceURI, newBlog.Id));
+                        }
+                        else
+                        {
+                            response.StatusCode = HttpStatusCode.BadRequest;
+                        }
                     }
                     else
                     {
@@ -223,14 +237,16 @@ namespace RESTBlogs.Server.Service
                         }
                         else
                         {
-                            SyndicationFeed blogFeed = new SyndicationFeed();
-                            blogFeed.Title = new TextSyndicationContent("Single Blog");
-                            blogFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
+                            SyndicationFeed blogFeed = new SyndicationFeed
+                                                           {
+                                                               Title = new TextSyndicationContent("Single Blog"),
+                                                               LastUpdatedTime = new DateTimeOffset(DateTime.Now)
+                                                           };
+
                             blogFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
 
                             SyndicationItem item = new SyndicationItem();
-                            List<SyndicationItem> itemList = new List<SyndicationItem>();
-                            itemList.Add(item);
+                            List<SyndicationItem> itemList = new List<SyndicationItem> {item};
                             blogFeed.Items = itemList;
 
                             item.Id = blog.Id;
@@ -270,7 +286,7 @@ namespace RESTBlogs.Server.Service
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
             }
@@ -292,21 +308,29 @@ namespace RESTBlogs.Server.Service
                 {
                     XmlReader reader = XmlReader.Create(request.Content.ReadAsStreamAsync().Result);
                     SyndicationFeed feed = SyndicationFeed.Load(reader);
-                    SyndicationItem item = feed.Items.FirstOrDefault();
 
-                    if (item != null)
+                    if (feed != null)
                     {
-                        blog.name = item.Title.Text;
-                        blog.description = item.Summary.Text;
-                        blog.updated = item.LastUpdatedTime;
-                        blog.published = item.PublishDate;
+                        SyndicationItem item = feed.Items.FirstOrDefault();
 
-                        var author = item.Authors.FirstOrDefault();
-
-                        if (author != null)
+                        if (item != null)
                         {
-                            blog.author = author.Name;
-                            blogsService.Update(blog);
+                            blog.name = item.Title.Text;
+                            blog.description = item.Summary.Text;
+                            blog.updated = item.LastUpdatedTime;
+                            blog.published = item.PublishDate;
+
+                            var author = item.Authors.FirstOrDefault();
+
+                            if (author != null)
+                            {
+                                blog.author = author.Name;
+                                blogsService.Update(blog);
+                            }
+                            else
+                            {
+                                response.StatusCode = HttpStatusCode.BadRequest;
+                            }
                         }
                         else
                         {
@@ -371,14 +395,16 @@ namespace RESTBlogs.Server.Service
 
                 if (blog != null)
                 {
-                    SyndicationFeed blogFeed = new SyndicationFeed();
-                    blogFeed.Title = new TextSyndicationContent("Blog tag cloud");
-                    blogFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
+                    SyndicationFeed blogFeed = new SyndicationFeed
+                                                   {
+                                                       Title = new TextSyndicationContent("Blog tag cloud"),
+                                                       LastUpdatedTime = new DateTimeOffset(DateTime.Now)
+                                                   };
+
                     blogFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
 
                     SyndicationItem item = new SyndicationItem();
-                    List<SyndicationItem> itemList = new List<SyndicationItem>();
-                    itemList.Add(item);
+                    List<SyndicationItem> itemList = new List<SyndicationItem> {item};
                     blogFeed.Items = itemList;
 
                     item.Id = blog.Id;
@@ -409,7 +435,7 @@ namespace RESTBlogs.Server.Service
                     response.StatusCode = HttpStatusCode.NotFound;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
             }
@@ -440,22 +466,28 @@ namespace RESTBlogs.Server.Service
                     }
                     else
                     {
-                        SyndicationFeed blogPostsFeed = new SyndicationFeed();
-                        blogPostsFeed.Title = new TextSyndicationContent(String.Format("Blog {0} posts", id));
-                        blogPostsFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
+                        SyndicationFeed blogPostsFeed = new SyndicationFeed
+                                                            {
+                                                                Title =
+                                                                    new TextSyndicationContent(
+                                                                    String.Format("Blog {0} posts", id)),
+                                                                LastUpdatedTime = new DateTimeOffset(DateTime.Now)
+                                                            };
+
                         blogPostsFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
 
-                        SyndicationItem item = null;
                         List<SyndicationItem> itemList = new List<SyndicationItem>();
                         blogPostsFeed.Items = itemList;
 
                         foreach (var post in posts)
                         {
-                            item = new SyndicationItem();
-                            item.Id = post.Id;
-                            item.LastUpdatedTime = post.updated;
-                            item.PublishDate = post.published;
-                            item.Title = new TextSyndicationContent(post.title);
+                            SyndicationItem item = new SyndicationItem
+                                                       {
+                                                           Id = post.Id,
+                                                           LastUpdatedTime = post.updated,
+                                                           PublishDate = post.published,
+                                                           Title = new TextSyndicationContent(post.title)
+                                                       };
 
                             item.Links.Add(SyndicationLink.CreateSelfLink(new Uri(String.Format("{0}/{1}/{2}", this.serviceURI, post.blogId, post.Id))));
                             item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
@@ -518,26 +550,36 @@ namespace RESTBlogs.Server.Service
 
                 XmlReader reader = XmlReader.Create(request.Content.ReadAsStreamAsync().Result);
                 SyndicationFeed feed = SyndicationFeed.Load(reader);
-                SyndicationItem item = feed.Items.FirstOrDefault();
 
-                if (item != null)
+                if (feed != null)
                 {
-                    Post newPost = new Post();
-                    newPost.content = ((TextSyndicationContent) item.Content).Text;
-                    newPost.published = item.PublishDate;
-                    newPost.updated = item.LastUpdatedTime;
-                    newPost.title = item.Title.Text;
+                    SyndicationItem item = feed.Items.FirstOrDefault();
 
-                    var author = item.Authors.FirstOrDefault();
-
-                    if (author != null)
+                    if (item != null)
                     {
-                        newPost.author = author.Name;
-                        newPost.blogId = String.Format("blogs/{0}", id);
-                        postsService.Create(newPost);
+                        Post newPost = new Post
+                                           {
+                                               content = ((TextSyndicationContent) item.Content).Text,
+                                               published = item.PublishDate,
+                                               updated = item.LastUpdatedTime,
+                                               title = item.Title.Text
+                                           };
 
-                        response.StatusCode = HttpStatusCode.Created;
-                        response.Headers.Add("Location", String.Format("{0}/blogs/{1}/{2}", this.serviceURI, id, newPost.Id));
+                        var author = item.Authors.FirstOrDefault();
+
+                        if (author != null)
+                        {
+                            newPost.author = author.Name;
+                            newPost.blogId = String.Format("blogs/{0}", id);
+                            postsService.Create(newPost);
+
+                            response.StatusCode = HttpStatusCode.Created;
+                            response.Headers.Add("Location", String.Format("{0}/blogs/{1}/{2}", this.serviceURI, id, newPost.Id));
+                        }
+                        else
+                        {
+                            response.StatusCode = HttpStatusCode.BadRequest;
+                        }
                     }
                     else
                     {
@@ -583,14 +625,16 @@ namespace RESTBlogs.Server.Service
                         }
                         else
                         {
-                            SyndicationFeed postFeed = new SyndicationFeed();
-                            postFeed.Title = new TextSyndicationContent("Single Post");
-                            postFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
+                            SyndicationFeed postFeed = new SyndicationFeed
+                                                           {
+                                                               Title = new TextSyndicationContent("Single Post"),
+                                                               LastUpdatedTime = new DateTimeOffset(DateTime.Now)
+                                                           };
+
                             postFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
 
                             SyndicationItem item = new SyndicationItem();
-                            List<SyndicationItem> itemList = new List<SyndicationItem>();
-                            itemList.Add(item);
+                            List<SyndicationItem> itemList = new List<SyndicationItem> {item};
                             postFeed.Items = itemList;
 
                             item.Id = post.Id;
@@ -653,21 +697,29 @@ namespace RESTBlogs.Server.Service
                 {
                     XmlReader reader = XmlReader.Create(request.Content.ReadAsStreamAsync().Result);
                     SyndicationFeed feed = SyndicationFeed.Load(reader);
-                    SyndicationItem item = feed.Items.FirstOrDefault();
 
-                    if (item != null)
+                    if (feed != null)
                     {
-                        post.title = item.Title.Text;
-                        post.updated = item.LastUpdatedTime;
-                        post.published = item.PublishDate;
-                        post.content = ((TextSyndicationContent) item.Content).Text;
+                        SyndicationItem item = feed.Items.FirstOrDefault();
 
-                        var author = item.Authors.FirstOrDefault();
-
-                        if (author != null)
+                        if (item != null)
                         {
-                            post.author = author.Name;
-                            postsService.Update(post);
+                            post.title = item.Title.Text;
+                            post.updated = item.LastUpdatedTime;
+                            post.published = item.PublishDate;
+                            post.content = ((TextSyndicationContent) item.Content).Text;
+
+                            var author = item.Authors.FirstOrDefault();
+
+                            if (author != null)
+                            {
+                                post.author = author.Name;
+                                postsService.Update(post);
+                            }
+                            else
+                            {
+                                response.StatusCode = HttpStatusCode.BadRequest;
+                            }
                         }
                         else
                         {
@@ -711,7 +763,7 @@ namespace RESTBlogs.Server.Service
                     response.StatusCode = HttpStatusCode.NotFound;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
             }
@@ -742,21 +794,27 @@ namespace RESTBlogs.Server.Service
                     }
                     else
                     {
-                        SyndicationFeed postCommentsFeed = new SyndicationFeed();
-                        postCommentsFeed.Title = new TextSyndicationContent(String.Format("Post {0} comments", postId));
-                        postCommentsFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
+                        SyndicationFeed postCommentsFeed = new SyndicationFeed
+                                                               {
+                                                                   Title =
+                                                                       new TextSyndicationContent(
+                                                                       String.Format("Post {0} comments", postId)),
+                                                                   LastUpdatedTime = new DateTimeOffset(DateTime.Now)
+                                                               };
+
                         postCommentsFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
 
-                        SyndicationItem item = null;
                         List<SyndicationItem> itemList = new List<SyndicationItem>();
                         postCommentsFeed.Items = itemList;
 
                         foreach (var comment in comments)
                         {
-                            item = new SyndicationItem();
-                            item.Id = comment.Id;
-                            item.LastUpdatedTime = comment.updated;
-                            item.PublishDate = comment.published;
+                            SyndicationItem item = new SyndicationItem
+                                                       {
+                                                           Id = comment.Id,
+                                                           LastUpdatedTime = comment.updated,
+                                                           PublishDate = comment.published
+                                                       };
 
                             item.Links.Add(SyndicationLink.CreateSelfLink(new Uri(String.Format("{0}/blogs/{1}/posts/{2}/{3}", this.serviceURI, blogId, postId, comment.Id))));
                             item.Links.Add(SyndicationLink.CreateAlternateLink(request.RequestUri, "text/html"));
@@ -800,7 +858,7 @@ namespace RESTBlogs.Server.Service
                     response.StatusCode = HttpStatusCode.NoContent;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
             }
@@ -819,25 +877,35 @@ namespace RESTBlogs.Server.Service
 
                 XmlReader reader = XmlReader.Create(request.Content.ReadAsStreamAsync().Result);
                 SyndicationFeed feed = SyndicationFeed.Load(reader);
-                SyndicationItem item = feed.Items.FirstOrDefault();
 
-                if (item != null)
+                if (feed != null)
                 {
-                    Comment newComment = new Comment();
-                    newComment.content = ((TextSyndicationContent) item.Content).Text;
-                    newComment.published = item.PublishDate;
-                    newComment.updated = item.LastUpdatedTime;
+                    SyndicationItem item = feed.Items.FirstOrDefault();
 
-                    var author = item.Authors.FirstOrDefault();
-
-                    if (author != null)
+                    if (item != null)
                     {
-                        newComment.author = author.Name;
-                        newComment.postId = String.Format("posts/{0}", postId);
-                        commentsService.Create(newComment);
+                        Comment newComment = new Comment
+                                                 {
+                                                     content = ((TextSyndicationContent) item.Content).Text,
+                                                     published = item.PublishDate,
+                                                     updated = item.LastUpdatedTime
+                                                 };
 
-                        response.StatusCode = HttpStatusCode.Created;
-                        response.Headers.Add("Location", String.Format("{0}/blogs/{1}/posts/{2}/{3}", this.serviceURI, blogId, postId, newComment.Id));
+                        var author = item.Authors.FirstOrDefault();
+
+                        if (author != null)
+                        {
+                            newComment.author = author.Name;
+                            newComment.postId = String.Format("posts/{0}", postId);
+                            commentsService.Create(newComment);
+
+                            response.StatusCode = HttpStatusCode.Created;
+                            response.Headers.Add("Location", String.Format("{0}/blogs/{1}/posts/{2}/{3}", this.serviceURI, blogId, postId, newComment.Id));
+                        }
+                        else
+                        {
+                            response.StatusCode = HttpStatusCode.BadRequest;
+                        }
                     }
                     else
                     {
@@ -849,7 +917,7 @@ namespace RESTBlogs.Server.Service
                     response.StatusCode = HttpStatusCode.BadRequest;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError; 
             }
@@ -883,14 +951,16 @@ namespace RESTBlogs.Server.Service
                         }
                         else
                         {
-                            SyndicationFeed commentFeed = new SyndicationFeed();
-                            commentFeed.Title = new TextSyndicationContent("Single Comment");
-                            commentFeed.LastUpdatedTime = new DateTimeOffset(DateTime.Now);
+                            SyndicationFeed commentFeed = new SyndicationFeed
+                                                              {
+                                                                  Title = new TextSyndicationContent("Single Comment"),
+                                                                  LastUpdatedTime = new DateTimeOffset(DateTime.Now)
+                                                              };
+
                             commentFeed.Links.Add(SyndicationLink.CreateSelfLink(request.RequestUri));
 
                             SyndicationItem item = new SyndicationItem();
-                            List<SyndicationItem> itemList = new List<SyndicationItem>();
-                            itemList.Add(item);
+                            List<SyndicationItem> itemList = new List<SyndicationItem> {item};
                             commentFeed.Items = itemList;
 
                             item.Id = comment.Id;
@@ -930,7 +1000,7 @@ namespace RESTBlogs.Server.Service
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
             }
@@ -945,27 +1015,35 @@ namespace RESTBlogs.Server.Service
 
             try
             {
-                ICommentsService commentsService = ObjectFactory.GetInstance<ICommentsService>(); ;
+                ICommentsService commentsService = ObjectFactory.GetInstance<ICommentsService>();
                 var comment = commentsService.Get(String.Format("comments/{0}", id));
 
                 if (comment != null)
                 {
                     XmlReader reader = XmlReader.Create(request.Content.ReadAsStreamAsync().Result);
                     SyndicationFeed feed = SyndicationFeed.Load(reader);
-                    SyndicationItem item = feed.Items.FirstOrDefault();
 
-                    if (item != null)
+                    if (feed != null)
                     {
-                        comment.updated = item.LastUpdatedTime;
-                        comment.published = item.PublishDate;
-                        comment.content = ((TextSyndicationContent) item.Content).Text;
+                        SyndicationItem item = feed.Items.FirstOrDefault();
 
-                        var author = item.Authors.FirstOrDefault();
-
-                        if (author != null)
+                        if (item != null)
                         {
-                            comment.author = author.Name;
-                            commentsService.Update(comment);
+                            comment.updated = item.LastUpdatedTime;
+                            comment.published = item.PublishDate;
+                            comment.content = ((TextSyndicationContent) item.Content).Text;
+
+                            var author = item.Authors.FirstOrDefault();
+
+                            if (author != null)
+                            {
+                                comment.author = author.Name;
+                                commentsService.Update(comment);
+                            }
+                            else
+                            {
+                                response.StatusCode = HttpStatusCode.BadRequest;
+                            }
                         }
                         else
                         {
@@ -982,7 +1060,7 @@ namespace RESTBlogs.Server.Service
                     response.StatusCode = HttpStatusCode.NotFound;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
             }
@@ -1009,7 +1087,7 @@ namespace RESTBlogs.Server.Service
                     response.StatusCode = HttpStatusCode.NotFound;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
             }
@@ -1021,7 +1099,7 @@ namespace RESTBlogs.Server.Service
 
         #region Helper methods
 
-        private string BuildtagCloud(List<string> tags)
+        private string BuildtagCloud(IEnumerable<string> tags)
         {
             StringBuilder buffer = new StringBuilder();
 
@@ -1033,7 +1111,7 @@ namespace RESTBlogs.Server.Service
             return buffer.ToString();
         }
 
-        private List<SyndicationLink> BuildPagingLinks(int totalCount, int pageIndex, int pageSize, Uri uri)
+        private IEnumerable<SyndicationLink> BuildPagingLinks(int totalCount, int pageIndex, int pageSize, Uri uri)
         {
             List<SyndicationLink> linksBuffer = new List<SyndicationLink>();
             int numberOfPages = pageSize >= totalCount ? 1 : totalCount / pageSize;

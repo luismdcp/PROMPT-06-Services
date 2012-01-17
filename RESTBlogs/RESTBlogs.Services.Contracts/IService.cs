@@ -2,7 +2,7 @@
 
 namespace RESTBlogs.Services.Contracts
 {
-    public interface IService<T, TKey>
+    public interface IService<T, in TKey>
     {
         List<T> GetAll();
         List<T> GetAll(int pageIndex, int pageSize);

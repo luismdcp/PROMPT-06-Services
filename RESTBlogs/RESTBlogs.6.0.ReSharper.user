@@ -1,26 +1,61 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="402" fromTop="15" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="191" fromTop="6" />
+      <File id="201015EB-8F60-4774-BCBE-E175C1E8DC3F/f:Blog.cs" caret="35" fromTop="2" />
+      <File id="201015EB-8F60-4774-BCBE-E175C1E8DC3F/f:Comment.cs" caret="0" fromTop="0" />
+      <File id="201015EB-8F60-4774-BCBE-E175C1E8DC3F/f:HelperExtensions.cs" caret="0" fromTop="0" />
+      <File id="201015EB-8F60-4774-BCBE-E175C1E8DC3F/f:Post.cs" caret="0" fromTop="0" />
+      <File id="B8DD3C58-C678-40D4-97D7-002916551FF4/f:ContainerBootstrapper.cs" caret="228" fromTop="6" />
+      <File id="15028C99-8264-49D5-BECC-64ED68240914/f:IBlogsRepository.cs" caret="0" fromTop="0" />
+      <File id="15028C99-8264-49D5-BECC-64ED68240914/f:ICommentsRepository.cs" caret="0" fromTop="0" />
+      <File id="15028C99-8264-49D5-BECC-64ED68240914/f:IPostsRepository.cs" caret="0" fromTop="0" />
+      <File id="15028C99-8264-49D5-BECC-64ED68240914/f:IRepository.cs" caret="135" fromTop="5" />
+      <File id="9DFC4A7D-2255-4737-82E6-F82BD70709E6/f:BaseRepository.cs" caret="2334" fromTop="19" />
+      <File id="9DFC4A7D-2255-4737-82E6-F82BD70709E6/f:CommentsRepository.cs" caret="0" fromTop="0" />
+      <File id="9DFC4A7D-2255-4737-82E6-F82BD70709E6/f:PostsRepository.cs" caret="0" fromTop="0" />
+      <File id="631F36CF-D21C-450A-BB3B-E8052036AE1A/f:IBlogsService.cs" caret="0" fromTop="0" />
+      <File id="631F36CF-D21C-450A-BB3B-E8052036AE1A/f:ICommentsService.cs" caret="0" fromTop="0" />
+      <File id="631F36CF-D21C-450A-BB3B-E8052036AE1A/f:IPostsService.cs" caret="0" fromTop="0" />
+      <File id="631F36CF-D21C-450A-BB3B-E8052036AE1A/f:IService.cs" caret="119" fromTop="4" />
+      <File id="D52109C6-1722-489A-A25C-0F27287DA4CD/f:BaseService.cs" caret="325" fromTop="11" />
+      <File id="D52109C6-1722-489A-A25C-0F27287DA4CD/f:BlogsService.cs" caret="325" fromTop="9" />
+      <File id="D52109C6-1722-489A-A25C-0F27287DA4CD/f:CommentsService.cs" caret="0" fromTop="0" />
+      <File id="D52109C6-1722-489A-A25C-0F27287DA4CD/f:PostsService.cs" caret="0" fromTop="0" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="312" fromTop="12" />
+      <File id="9DFC4A7D-2255-4737-82E6-F82BD70709E6/f:BlogsRepository.cs" caret="0" fromTop="0" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="34265" fromTop="17" />
     </RecentFiles>
     <RecentEdits>
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="971" fromTop="13" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="593" fromTop="22" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="475" fromTop="20" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="914" fromTop="34" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="15" fromTop="1" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="512" fromTop="17" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="191" fromTop="9" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="708" fromTop="19" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="955" fromTop="24" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/f:Program.cs" caret="651" fromTop="21" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="1712" fromTop="34" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="1323" fromTop="23" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="1671" fromTop="29" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="1671" fromTop="29" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="364" fromTop="8" />
-      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogService.cs" caret="191" fromTop="6" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="28338" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="31701" fromTop="19" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="31590" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="32901" fromTop="27" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="34082" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="35333" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="36294" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="39021" fromTop="18" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="39870" fromTop="19" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="39771" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="40009" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="40351" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="41547" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="43318" fromTop="19" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="43602" fromTop="24" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="45907" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="46950" fromTop="19" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="46839" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="48109" fromTop="26" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="46515" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="48324" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="49610" fromTop="16" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="49353" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="49906" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="3496" fromTop="2" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="3776" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="20716" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="21000" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="36032" fromTop="17" />
+      <File id="3DA845C5-1025-4B1F-9CA5-9D8443B79875/d:Service/f:RESTBlogsService.cs" caret="36325" fromTop="17" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -30,8 +65,7 @@
     <Providers />
   </UnitTestRunner>
   <UnitTestRunnerNUnit>
-    <NUnitInstallDir IsNull="False">
-    </NUnitInstallDir>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.5.10\bin\net-2.0\lib</NUnitInstallDir>
     <UseAddins>Never</UseAddins>
   </UnitTestRunnerNUnit>
   <SettingsComponent>
@@ -58,7 +92,7 @@
       <Item value="if" priority="31" />
       <Item value="ICommunicationObject`0" priority="32" />
       <Item value="Faulted" priority="16" />
-      <Item value="else" priority="31" />
+      <Item value="else" priority="223" />
       <Item value="Console`0" priority="31" />
       <Item value="doc" priority="127" />
       <Item value="request" priority="31" />
@@ -74,6 +108,7 @@
       <Item value="ObjectContent" priority="28" />
       <Item value="ServiceKnownType" priority="31" />
       <Item value="type" priority="31" />
+      <Item value="ElementInformation`0" priority="31" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Microsoft.ApplicationServer.Http.HttpServiceHost">
       <Item value="Open`0" priority="26" />

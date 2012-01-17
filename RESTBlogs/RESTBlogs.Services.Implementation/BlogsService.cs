@@ -9,17 +9,17 @@ namespace RESTBlogs.Services.Implementation
     {
         public BlogsService(IBlogsRepository repository)
         {
-            this.repository = repository;
+            this.Repository = repository;
         }
 
         public List<string> GetTagCloud(string blogId)
         {
-            return ((IBlogsRepository) this.repository).GetTagCloud(blogId);
+            return ((IBlogsRepository) this.Repository).GetTagCloud(blogId);
         }
 
         public List<Blog> GetBlogsFromUser(string user)
         {
-            return ((IBlogsRepository) this.repository).GetBlogsFromUser(user);
+            return ((IBlogsRepository) this.Repository).GetBlogsFromUser(user);
         }
     }
 }
